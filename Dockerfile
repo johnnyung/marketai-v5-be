@@ -1,52 +1,38 @@
-# ------------------------------------------------------------------------------
-# MarketAI V5 Backend - Production Dockerfile
-# Node 20 (Alpine) | Prisma | TypeScript
-# ------------------------------------------------------------------------------
-
-# 1. Build Stage
+# ======================
+# Builder
+# ======================
 FROM node:20-alpine AS builder
+
 WORKDIR /app
 
-# Install system dependencies for Prisma (OpenSSL)
 RUN apk add --no-cache openssl
 
-# Copy manifests
 COPY package*.json ./
 COPY tsconfig.json ./
 COPY prisma ./prisma/
 
-# Install dependencies (including dev for building)
 RUN npm install
 
-# Copy source
 COPY src ./src
 
-# Generate Prisma Client
-ENV DATABASE_URL=postgresql://build:build@localhost:5432/builddb
 RUN npx prisma generate
-
-# Build TypeScript
 RUN npm run build
 
-# 2. Production Stage
-FROM node:20-alpine AS runner
+# ======================
+# Runner
+# ======================
+FROM node:20-alpine
+
 WORKDIR /app
 
-# Install system dependencies
-RUN apk add --no-cache openssl
+ENV NODE_ENV=production
 
-# Copy artifacts from builder
-COPY --from=builder /app/package*.json ./
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/package*.json ./
 COPY --from=builder /app/prisma ./prisma
 
-# Environment defaults (Override in Railway)
-ENV NODE_ENV=production
-ENV PORT=3001
+# Railway provides PORT dynamically
+EXPOSE 3000
 
-# Expose Port
-EXPOSE 3001
-
-# Start Server
 CMD ["node", "dist/server.js"]
