@@ -2,8 +2,6 @@ import express from "express";
 import cors from "cors";
 
 import { prisma } from "./db/prisma.js";
-import { env } from "./config/env.js";
-
 import router from "./routes/index.js";
 import { errorHandler } from "./middleware/errorHandler.js";
 import { requestLogger } from "./middleware/requestLogger.js";
@@ -16,13 +14,8 @@ async function bootstrap() {
   console.log("🚀 Initializing MarketAI V5 Backend");
   console.log("--------------------------------------------------");
 
-  try {
-    await prisma.$connect();
-    console.log("✅ Database connected");
-  } catch (e) {
-    console.error("❌ Database connection failed:", e);
-    process.exit(1);
-  }
+  await prisma.$connect();
+  console.log("✅ Database connected");
 
   app.use(cors());
   app.use(express.json());
@@ -35,11 +28,7 @@ async function bootstrap() {
   app.use("/api", router);
   app.use(errorHandler);
 
-  const PORT = Number(process.env.PORT);
-  if (!PORT) {
-    console.error("❌ PORT not set — Railway will fail");
-    process.exit(1);
-  }
+  const PORT = Number(process.env.PORT) || 3000;
 
   app.listen(PORT, "0.0.0.0", () => {
     startScheduler();
