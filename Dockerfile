@@ -1,4 +1,5 @@
 # ------------------------------------------------------------------------------
+ENV PRISMA_CONFIG_PATH=/app/prisma.config.ts
 # MarketAI V5 Backend - Production Dockerfile
 # Node 20 (Alpine) | Prisma | TypeScript
 # ------------------------------------------------------------------------------
