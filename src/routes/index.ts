@@ -1,21 +1,23 @@
 import { Router } from "express";
-import brainRoutes from "./brainRoutes.js";
-import ingestionRoutes from "./ingestionRoutes.js";
+
+import healthRoutes from "./health.js";
 import diagnosticsRoutes from "./diagnosticsRoutes.js";
 import diagnosticsSystemRoutes from "./diagnosticsSystemRoutes.js";
-import opportunitiesRoutes from "./opportunitiesRoutes.js";
+import ingestionRoutes from "./ingestionRoutes.js";
+import ingestRoutes from "./ingestRoutes.js";
+import brainRoutes from "./brainRoutes.js";
 import schedulerRoutes from "./schedulerRoutes.js";
+import opportunitiesRoutes from "./opportunitiesRoutes.js";
 
 const router = Router();
 
-// Core Business Logic
-router.use("/brain", brainRoutes);
-router.use("/ingest", ingestionRoutes);
-router.use("/opportunities", opportunitiesRoutes);
-
-// Observability & System
-router.use("/diagnostics", diagnosticsRoutes);       // Basic logs (brain/ingest)
-router.use("/diagnostics", diagnosticsSystemRoutes); // System metrics (system/scheduler/queue)
-router.use("/scheduler", schedulerRoutes);
+router.use(healthRoutes);
+router.use("/diagnostics", diagnosticsRoutes);
+router.use(diagnosticsSystemRoutes);
+router.use("/ingestion", ingestionRoutes);
+router.use("/ingest", ingestRoutes);
+router.use(brainRoutes);
+router.use(schedulerRoutes);
+router.use(opportunitiesRoutes);
 
 export default router;
