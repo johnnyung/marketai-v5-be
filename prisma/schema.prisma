@@ -3,10 +3,6 @@ generator client {
   previewFeatures = ["driverAdapters"]
 }
 
-datasource db {
-  provider = "postgresql"
-}
-
 // 1. UNIVERSE & REFERENCE
 model Ticker {
   id           String   @id @default(cuid())
