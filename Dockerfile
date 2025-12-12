@@ -14,6 +14,7 @@ RUN apk add --no-cache openssl
 COPY package*.json ./
 COPY tsconfig.json ./
 COPY prisma ./prisma/
+COPY prisma.config.ts ./prisma.config.ts
 COPY prisma/prisma.config.ts ./prisma/prisma.config.ts
 
 # Install dependencies (including dev for building)
