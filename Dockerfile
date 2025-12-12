@@ -35,4 +35,6 @@ COPY --from=builder /app/prisma ./prisma
 # Railway provides PORT dynamically
 EXPOSE 3000
 
+
+# ---- Railway start command ----
 CMD ["node", "dist/server.js"]
