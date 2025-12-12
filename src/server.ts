@@ -1,14 +1,15 @@
-import { prisma } from "./db/prisma.js";
-import { env } from "./config/env.js";
 import express from "express";
 import cors from "cors";
+
+import { prisma } from "./db/prisma.js";
+import { env } from "./config/env.js";
+
 import router from "./routes/index.js";
 import { errorHandler } from "./middleware/errorHandler.js";
 import { requestLogger } from "./middleware/requestLogger.js";
 import { startScheduler } from "./cron/scheduler.js";
 
 const app = express();
-// prisma singleton imported
 
 async function bootstrap() {
   console.log("--------------------------------------------------");
@@ -24,47 +25,33 @@ async function bootstrap() {
   }
 
   app.use(cors());
-import healthRouter from "./routes/health.js";
-app.use("/health", healthRouter);
   app.use(express.json());
-import healthRouter from "./routes/health.js";
-app.use("/health", healthRouter);
   app.use(requestLogger);
-import healthRouter from "./routes/health.js";
-app.use("/health", healthRouter);
 
-  app.get("/api/health", (req, res) => {
-    res.json({ 
-      status: "ok", 
+  app.get("/api/health", (_req, res) => {
+    res.json({
+      status: "ok",
       env: env.NODE_ENV,
-      timestamp: new Date().toISOString() 
+      timestamp: new Date().toISOString(),
     });
   });
 
   app.use("/api", router);
-import healthRouter from "./routes/health.js";
-app.use("/health", healthRouter);
   app.use(errorHandler);
-import healthRouter from "./routes/health.js";
-app.use("/health", healthRouter);
 
   const PORT = Number(env.PORT) || 3000;
   const HOST = "0.0.0.0";
 
   app.listen(PORT, HOST, () => {
+    startScheduler();
 
-  startScheduler();
-
-    console.log(`\n📡 Server listening at http://${HOST}:${PORT}`);
-    console.log(`🏥 Health check at http://${HOST}:${PORT}/api/health`);
-    
-    // Start Scheduler
-    
+    console.log(`📡 Server listening on ${HOST}:${PORT}`);
+    console.log(`🏥 Health check: /api/health`);
     console.log("--------------------------------------------------");
   });
 }
 
 bootstrap().catch((err) => {
-  console.error("❌ Fatal Bootstrap Error:", err);
+  console.error("❌ Fatal bootstrap error:", err);
   process.exit(1);
 });
