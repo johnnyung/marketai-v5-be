@@ -16,8 +16,13 @@ async function bootstrap() {
   console.log("🚀 Initializing MarketAI V5 Backend");
   console.log("--------------------------------------------------");
 
-  await prisma.$connect();
-  console.log("✅ Database connected");
+  try {
+    await prisma.$connect();
+    console.log("✅ Database connected");
+  } catch (e) {
+    console.error("❌ Database connection failed:", e);
+    process.exit(1);
+  }
 
   app.use(cors());
   app.use(express.json());
@@ -37,12 +42,13 @@ async function bootstrap() {
   }
 
   app.listen(PORT, "0.0.0.0", () => {
-    console.log(`📡 Listening on PORT=${PORT}`);
     startScheduler();
+    console.log(`📡 Server listening on 0.0.0.0:${PORT}`);
+    console.log("--------------------------------------------------");
   });
 }
 
-bootstrap().catch((e) => {
-  console.error("❌ Fatal bootstrap error:", e);
+bootstrap().catch((err) => {
+  console.error("❌ Fatal bootstrap error:", err);
   process.exit(1);
 });
