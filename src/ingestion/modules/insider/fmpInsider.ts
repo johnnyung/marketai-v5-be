@@ -1,6 +1,6 @@
 import { IngestionModule } from "../../types.js";
 import axios from "axios";
-import { env } from "@/config/env.js";
+import { env } from "../../../config/env.js";
 
 export const fmpInsiderModule: IngestionModule = {
   name: "fmp-insider", category: "alt",

@@ -1,6 +1,6 @@
 import { IngestionModule } from "../../types.js";
 import axios from "axios";
-import { env } from "@/config/env.js";
+import { env } from "../../../config/env.js";
 import { retry } from "../../utils/retrier.js";
 
 export const fmpFundamentalsModule: IngestionModule = {

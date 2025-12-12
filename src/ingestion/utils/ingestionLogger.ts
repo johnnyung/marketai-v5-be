@@ -1,5 +1,5 @@
 import { prisma } from "../../db/prisma.js";
-import { logger } from "@/utils/logger.js";
+import { logger } from "../../utils/logger.js";
 
 // prisma singleton imported
 

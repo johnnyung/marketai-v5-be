@@ -1,6 +1,6 @@
 import { IngestionModule } from "../../types.js";
 import axios from "axios";
-import { env } from "@/config/env.js";
+import { env } from "../../../config/env.js";
 
 export const sp500Universe: IngestionModule = {
   name: "sp500-constituent", category: "universe",
