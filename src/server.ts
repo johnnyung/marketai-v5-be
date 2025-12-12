@@ -24,8 +24,14 @@ async function bootstrap() {
   }
 
   app.use(cors());
+import healthRouter from "./routes/health.js";
+app.use("/health", healthRouter);
   app.use(express.json());
+import healthRouter from "./routes/health.js";
+app.use("/health", healthRouter);
   app.use(requestLogger);
+import healthRouter from "./routes/health.js";
+app.use("/health", healthRouter);
 
   app.get("/api/health", (req, res) => {
     res.json({ 
@@ -36,7 +42,11 @@ async function bootstrap() {
   });
 
   app.use("/api", router);
+import healthRouter from "./routes/health.js";
+app.use("/health", healthRouter);
   app.use(errorHandler);
+import healthRouter from "./routes/health.js";
+app.use("/health", healthRouter);
 
   const PORT = Number(env.PORT) || 3000;
   const HOST = "0.0.0.0";
