@@ -16,42 +16,33 @@ async function bootstrap() {
   console.log("🚀 Initializing MarketAI V5 Backend");
   console.log("--------------------------------------------------");
 
-  try {
-    await prisma.$connect();
-    console.log("✅ Database connected successfully");
-  } catch (e) {
-    console.error("❌ Database connection failed:", e);
-    process.exit(1);
-  }
+  await prisma.$connect();
+  console.log("✅ Database connected");
 
   app.use(cors());
   app.use(express.json());
   app.use(requestLogger);
 
   app.get("/api/health", (_req, res) => {
-    res.json({
-      status: "ok",
-      env: env.NODE_ENV,
-      timestamp: new Date().toISOString(),
-    });
+    res.json({ status: "ok" });
   });
 
   app.use("/api", router);
   app.use(errorHandler);
 
-  const PORT = Number(env.PORT) || 3000;
-  const HOST = "0.0.0.0";
+  const PORT = Number(process.env.PORT);
+  if (!PORT) {
+    console.error("❌ PORT not set — Railway will fail");
+    process.exit(1);
+  }
 
-  app.listen(PORT, HOST, () => {
+  app.listen(PORT, "0.0.0.0", () => {
+    console.log(`📡 Listening on PORT=${PORT}`);
     startScheduler();
-
-    console.log(`📡 Server listening on ${HOST}:${PORT}`);
-    console.log(`🏥 Health check: /api/health`);
-    console.log("--------------------------------------------------");
   });
 }
 
-bootstrap().catch((err) => {
-  console.error("❌ Fatal bootstrap error:", err);
+bootstrap().catch((e) => {
+  console.error("❌ Fatal bootstrap error:", e);
   process.exit(1);
 });
