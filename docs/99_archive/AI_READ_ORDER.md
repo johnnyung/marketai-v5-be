@@ -1,0 +1,12 @@
+# AI READ ORDER (MANDATORY)
+
+1. AI_BOOTSTRAP.md
+2. MARKETAI_V5_CANONICAL_STATE.md
+3. PHASE_STATUS.md
+4. INGESTION_STATUS_CANON.md
+5. PHASE_2_CHECKPOINT.md
+6. NEXT_EXECUTION_PLAN.md
+
+If any instruction conflicts:
+→ Canonical docs win.
+

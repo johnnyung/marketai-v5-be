@@ -1,0 +1,318 @@
+# INGESTION SYSTEM — CANONICAL (AUTHORITATIVE)
+
+This document defines the **non-negotiable ingestion execution model** for MarketAI V5.
+
+If this document is violated, the system will:
+- appear to work while silently failing
+- misreport ingestion state
+- cause UI and engine desynchronization
+- trigger repeated incorrect “fixes”
+
+This file is **AUTHORITATIVE**.
+
+---
+
+## 🎯 Purpose & Scope
+
+This document governs:
+- ingestion module existence
+- execution responsibility
+- registry semantics
+- failure interpretation
+
+This document does **not** define source-specific behavior.
+Source-specific rules live in subordinate canons.
+
+---
+
+## 🔒 Canonical Ingestion Model (LOCKED)
+
+Ingestion is composed of **three distinct layers**:
+
+1️⃣ **Registry (Declaration)**
+- Declares what ingestion modules exist
+- Static, canonical truth
+- Powers status and UI visibility
+- Does NOT execute code
+
+2️⃣ **Execution Pipeline**
+- Executes ingestion modules
+- Owns execution order
+- Owns context construction
+- The ONLY place ingestion code runs
+
+3️⃣ **Runtime Persistence (Optional)**
+- Persists results of execution
+- Must align with Prisma schema
+- May be disabled without breaking execution
+
+Registry ≠ Execution ≠ Runtime  
+These layers MUST NOT be collapsed.
+
+---
+
+## 📦 Execution Registry Rules (LOCKED)
+
+- There is exactly **ONE execution registry**
+- Execution registry entries MUST be statically imported
+- Each entry MUST provide:
+  - `name`
+  - `category`
+  - `run(ctx)` handler
+
+Rules:
+- ENABLED registry entries without `run(ctx)` are a HARD ERROR
+- UI registry metadata MUST NOT be used for execution
+- File presence alone does NOT define module existence
+
+A module exists if and only if it is declared in the execution registry.
+
+---
+
+## ⚙️ Pipeline Responsibilities (LOCKED)
+
+The ingestion pipeline:
+- Iterates the execution registry
+- Constructs execution context
+- Invokes module handlers
+- Tracks success or failure
+
+Rules:
+- Missing context is a PIPELINE BUG
+- Modules MUST NOT self-construct context
+- Execution order is pipeline-owned
+
+---
+
+## 🧠 Context Construction Rules (LOCKED)
+
+- Context is constructed once per run
+- Context is passed into each module
+- Modules MUST treat context as immutable
+
+If context is missing or malformed:
+- Do NOT modify module code
+- Fix the pipeline
+
+---
+
+## ❗ Failure Semantics (LOCKED)
+
+- Successful build ≠ successful ingestion
+- Empty data ≠ failure unless documented otherwise
+- Missing runtime persistence ≠ execution failure
+
+Failure types:
+- Registry violation → SYSTEM ERROR
+- Pipeline violation → SYSTEM ERROR
+- Source behavior → SOURCE CANON governs
+
+AI MUST NOT fabricate failures.
+
+---
+
+## 📚 Subordinate Canons (REQUIRED)
+
+Source-specific ingestion behavior is defined in subordinate canons.
+AI MUST load them when working on ingestion sources.
+
+Current subordinate canons include:
+- FMP Dividend Ingestion  
+  → _archive/FMP_DIVIDEND_INGESTION_CANON.md
+
+- Ingestion Registry Runtime Semantics  
+  → _archive/INGESTION_REGISTRY_RUNTIME_SEMANTICS.md
+
+---
+
+## 📝 Update Rules (LOCKED)
+
+- Update THIS file for ingestion system rules
+- Update subordinate canons for source-specific behavior
+- AI MUST NOT create new ingestion canon files
+- AI MUST NOT write ingestion docs outside this folder
+
+---
+
+## 📖 Historical Incident (REFERENCE ONLY)
+
+### Registry & Pipeline Desynchronization (Dec 2025)
+
+Symptoms:
+- UI showed enabled ingestion modules
+- Pipeline executed nothing
+- System falsely appeared “healthy”
+
+Root cause:
+- Execution registry drifted from UI registry
+- Pipeline attempted dynamic discovery
+
+Resolution:
+- Single execution registry enforced
+- Static imports only
+- Pipeline owns execution context
+
+This section is **REFERENCE ONLY**.
+All rules above are the canonical outcome.
+
+
+---
+
+## 📚 Canonical Ingestion Documents (READ ORDER)
+
+This document defines **ingestion scope, governance, and invariants**.
+
+Detailed and authoritative rules live in the following canon files and
+**must be consulted before making claims about ingestion behavior**.
+
+### 1️⃣ Execution & Pipeline (AUTHORITATIVE)
+→ **INGESTION_CANON.md**
+
+Defines:
+- Ingestion layers
+- Pipeline execution rules
+- Registry vs execution separation
+- Canon enforcement
+
+---
+
+### 2️⃣ Runtime & Registry Semantics (CRITICAL — MUST READ)
+→ **INGESTION_REGISTRY_RUNTIME_SEMANTICS.md**
+
+Defines:
+- Why ingestion modules may not appear in `src/`
+- Why runtime evaluation happens against `dist/`
+- Why filesystem scans are not proof of module absence
+- NodeNext + ESM resolution constraints
+
+Failure to read this document **will result in false-negative module detection**.
+
+---
+
+### 3️⃣ API & Frontend Contract (LOCKED)
+→ **INGESTION_STATUS_CANON.md**
+
+Defines:
+- `/api/ingestion/status` response shape
+- Frontend consumption rules
+- Registry truth vs runtime truth
+
+---
+
+### 4️⃣ Source-Specific Ingestion Canon
+→ **04_ingestion/_archive/*.md**
+
+Includes:
+- `FMP_DIVIDEND_INGESTION_CANON.md`
+- Other source- or fix-specific ingestion rules
+
+These documents **extend** ingestion behavior but do not redefine system rules.
+
+---
+
+### 🚨 Canon Enforcement
+
+- No ingestion behavior may be inferred from filesystem inspection alone
+- No execution claims may be made without consulting runtime semantics
+- This document is an index — not a replacement — for the above canon files
+
+
+## Ingestion Expansion Learnings
+
+Recent expansion work has validated the need for:
+- Strict schema alignment between source payloads and persistence models
+- BigInt safety for numeric market fields
+- Explicit runtime context validation (e.g. ticker availability)
+- Guarded handling of partial or malformed upstream responses
+
+These learnings are now considered canonical.
+
+---
+
+## Appendix References
+
+The following documents are **non-authoritative appendices** that provide
+source-specific or narrowly scoped ingestion details.
+
+These documents MUST NOT define system-wide ingestion rules.
+
+### Active Ingestion Appendices
+
+- `_appendix/FMP_DIVIDEND_INGESTION_CANON.md`
+  - Scope: FMP dividend-specific ingestion behavior
+  - Authority: Supplemental only
+  - Must not override rules defined in this canon
+
+All ingestion logic, ordering, status semantics, and runtime guarantees
+are defined exclusively in the primary ingestion canon documents.
+
+---
+
+
+---
+
+## Ingestion Execution Invariants (Enforced)
+
+### Execution Gating
+The following environment variables are hard execution gates:
+- INGEST_ONLY
+- INGEST_DISABLE_ALL
+
+They are evaluated after registry load and before module execution.
+Registry order and logging still occur even when all modules are gated.
+
+---
+
+### Prisma Access Rule
+Ingestion modules:
+- MUST NOT import or instantiate Prisma directly
+- MUST ONLY access the database via ctx.prisma
+
+Violations are hard failures.
+
+---
+
+### External API Volatility
+External data sources are assumed unreliable.
+
+Rules:
+- External API failures MUST NOT block ingestion
+- Modules must degrade to skipped or partial
+- Retries MUST NOT stall the pipeline
+
+---
+
+### Schema Discipline
+Ingestion code:
+- MUST ONLY use Prisma constraints that explicitly exist
+- MUST NOT assume composite keys
+- MUST align queries to the actual schema
+
+Schema assumptions are forbidden.
+
+
+---
+
+## Runtime Invariants (Observed)
+
+### Registry & Build Authority
+- The compiled registry (`dist/ingestion/manifestFull.js`) is the sole runtime authority.
+- Successful builds do NOT guarantee registry correctness.
+- Registry uniqueness is not enforced.
+
+### Enable / Disable Semantics
+- `INGEST_ONLY` filters execution against registered module names only.
+- `INGEST_DISABLE_ALL=1` forces all modules to skip without halting the pipeline.
+- Gating is subtractive only; it cannot activate unregistered modules.
+
+### Failure & Recovery Guarantees
+- Ingestion is non-blocking by design; module failures do not halt the pipeline.
+- External API failures are expected and non-fatal.
+- Cancellation of long-running modules is non-destructive.
+- Direct execution is a diagnostic tool, not a pipeline substitute.
+
+### Operational Truths
+- `dist/` is the source of truth for debugging.
+- Script-based edits are high-risk and must be audited.
+- Control-plane test modules are essential for isolation.
+

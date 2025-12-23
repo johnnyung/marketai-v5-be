@@ -1,0 +1,42 @@
+# DATA SOURCES — CANONICAL
+Authoritative source definitions and ingestion ordering.
+
+## Clarifications and Scope Rules
+
+**Definition — IMPLEMENTED**
+“Implemented” indicates that ingestion code exists and is wired into the system.
+It does **not** guarantee stability, completeness, or historical backfill coverage.
+
+**Financial Modeling Prep (FMP)**
+Only the **Stable API** is authorized for use.
+Legacy or deprecated endpoints must not be referenced or integrated.
+
+**Source vs Intelligence Boundary**
+This document enumerates **data availability only**.
+It intentionally excludes:
+- Correlation logic
+- Intelligence engines
+- Narrative or forecasting behavior
+
+Downstream analysis is governed by separate canon documents.
+
+
+---
+
+## Data Sources Authority
+
+This document (**DATA_SOURCES_CANON.md**) is the **sole authoritative source** for:
+
+- Which external data sources exist
+- What each source provides
+- Expected stability and guarantees
+- High-level ingestion intent
+
+Rules:
+- No other document may redefine source scope or guarantees
+- Ingestion mechanics are defined elsewhere
+- If conflicts arise, this file always wins
+
+Supporting, non-authoritative documents live in:
+`backend/docs/05_data_sources/_appendix/`
+

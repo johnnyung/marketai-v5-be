@@ -1,0 +1,10 @@
+{
+  "generatedAt": "2025-12-23T01:54:28.874Z",
+  "phase": "phase2",
+  "summary": {
+    "readyCount": 0,
+    "notReadyCount": 0
+  },
+  "readyForTesting": [],
+  "blocked": []
+}

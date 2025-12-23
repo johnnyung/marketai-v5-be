@@ -1,0 +1,1679 @@
+FINAL STRUCTURE SNAPSHOT
+Timestamp: Mon 22 Dec 2025 23:37:44 UTC
+
+=== TREE (DEPTH 3) ===
+src
+src/ai
+src/ai/prompts
+src/api
+src/api/commandCenter
+src/api/opportunities
+src/brain
+src/brain/_generated
+src/brain/autopilot
+src/brain/contracts
+src/brain/core
+src/brain/db
+src/brain/engines
+src/brain/engines/aiCostGuardrails
+src/brain/engines/aiGovernance
+src/brain/engines/autoUpgradePlanner
+src/brain/engines/autoUpgradePrompter
+src/brain/engines/bundleCompression
+src/brain/engines/catalystHunter
+src/brain/engines/confidenceCalibration
+src/brain/engines/confidenceDecay
+src/brain/engines/contradiction
+src/brain/engines/correlation
+src/brain/engines/correlationHunter
+src/brain/engines/engineAttribution
+src/brain/engines/engineEvaluation
+src/brain/engines/engineWeightAdjuster
+src/brain/engines/experimentRunner
+src/brain/engines/explanationNarrative
+src/brain/engines/insiderActivity
+src/brain/engines/macroShock
+src/brain/engines/metaFusion
+src/brain/engines/metaLearningScheduler
+src/brain/engines/newsVelocity
+src/brain/engines/opportunityBacktest
+src/brain/engines/opportunityLifecycle
+src/brain/engines/opportunityNarrative
+src/brain/engines/opportunityOutcome
+src/brain/engines/opportunityPromotion
+src/brain/engines/opportunityScoring
+src/brain/engines/opportunitySynthesis
+src/brain/engines/optionsFlow
+src/brain/engines/regimeFusion
+src/brain/engines/regimeSynthesis
+src/brain/engines/selfEvaluation
+src/brain/engines/selfImprovementController
+src/brain/engines/signalDetection
+src/brain/ensemble
+src/brain/fusion
+src/brain/meta
+src/brain/opportunities
+src/brain/opportunities/materialization
+src/brain/runners
+src/brain/schema
+src/brain/trade
+src/brain/utils
+src/brain/vendorProxy
+src/config
+src/controllers
+src/cron
+src/db
+src/diagnostics
+src/ingestion
+src/ingestion/adapters
+src/ingestion/adapters/bundles
+src/ingestion/adapters/crypto
+src/ingestion/adapters/fundamentals
+src/ingestion/adapters/insider
+src/ingestion/adapters/institutional
+src/ingestion/adapters/macro
+src/ingestion/adapters/metrics
+src/ingestion/adapters/news
+src/ingestion/adapters/opportunities
+src/ingestion/adapters/options
+src/ingestion/adapters/prices
+src/ingestion/adapters/universe
+src/ingestion/control
+src/ingestion/modules
+src/ingestion/modules/analysis
+src/ingestion/modules/bundles
+src/ingestion/modules/corporate
+src/ingestion/modules/crypto
+src/ingestion/modules/fundamentals
+src/ingestion/modules/government
+src/ingestion/modules/insider
+src/ingestion/modules/institutional
+src/ingestion/modules/lifecycle
+src/ingestion/modules/macro
+src/ingestion/modules/metrics
+src/ingestion/modules/news
+src/ingestion/modules/opportunities
+src/ingestion/modules/opportunity
+src/ingestion/modules/options
+src/ingestion/modules/political
+src/ingestion/modules/prices
+src/ingestion/modules/universe
+src/ingestion/pipelines
+src/ingestion/schedulers
+src/ingestion/utils
+src/lib
+src/middleware
+src/modules
+src/modules/corporate
+src/modules/political
+src/observability
+src/routes
+src/routes/ingestion
+src/routes/ui
+src/schedulers
+src/schema
+src/services
+src/services/opportunities
+src/types
+src/utils
+
+=== GIT STATUS ===
+ M .DS_Store
+ M Dockerfile
+ D docs/ARCHITECTURE_OVERVIEW.md
+ D docs/BRAIN_AND_ENGINES.md
+ D docs/DATA_SOURCES_AND_INGESTION.md
+ D docs/FRONTEND_AND_UI_SPEC.md
+ D docs/ROADMAP_AND_APB_RULES.md
+ D fix_port_type.sh
+ M package-lock.json
+ M package.json
+ D patch_schema.js
+ D prisma.config.ts
+ M prisma/migrations/20251212202810_init/migration.sql
+ D prisma/prisma.config.ts
+ M prisma/schema.prisma
+ D scripts/fix_brain_orchestrator_types.sh
+ D scripts/fix_routes_and_server.sh
+ D scripts/fix_routes_controllers_mismatch.sh
+ D scripts/fix_routes_index.sh
+ M src/ai/modelRouter.ts
+ M src/brain/core/brainOrchestrator.ts
+ M src/brain/core/engineRegistry.ts
+ M src/brain/engines/fundamentalsEngine.ts
+ M src/brain/fusion/fusionEngine.ts
+ M src/brain/meta/metaOrchestrator.ts
+ M src/brain/schema/types.ts
+ M src/ingestion/manifestFull.ts
+ M src/ingestion/modules/fundamentals/fmpFundamentals.ts
+ M src/ingestion/modules/insider/fmpInsider.ts
+ M src/ingestion/modules/news/fmpNews.ts
+ M src/ingestion/modules/prices/polygonPrices.ts
+ M src/ingestion/modules/universe/sp500Universe.ts
+ M src/ingestion/pipelines/modulePipeline.ts
+ M src/ingestion/utils/ingestionLogger.ts
+ M src/middleware/errorHandler.ts
+ D src/phase4/aiSynthesis/v1/aiSynthesisPrompt.ts
+ D src/phase4/aiSynthesis/v1/index.ts
+ D src/phase4/aiSynthesis/v1/prompt.ts
+ D src/phase4/aiSynthesis/v1/providers.ts
+ D src/phase4/aiSynthesis/v1/providers/claude.ts
+ D src/phase4/aiSynthesis/v1/providers/index.ts
+ D src/phase4/aiSynthesis/v1/providers/openai.ts
+ D src/phase4/aiSynthesis/v1/runAISynthesis.ts
+ D src/phase4/aiSynthesis/v1/types.ts
+ D src/phase4/composer/__tests__/composeOpportunity.test.ts
+ D src/phase4/composer/composeOpportunity.ts
+ D src/phase4/diagnostics/__tests__/diagnosticsSummary.test.ts
+ D src/phase4/diagnostics/__tests__/generateDiagnosticsMetrics.test.ts
+ D src/phase4/diagnostics/diagnosticsSummary.ts
+ D src/phase4/diagnostics/generateDiagnosticsMetrics.ts
+ D src/phase4/explanation/__tests__/explainOpportunity.test.ts
+ D src/phase4/explanation/__tests__/explanationSummary.test.ts
+ D src/phase4/explanation/explainOpportunity.ts
+ D src/phase4/explanation/explanationSummary.ts
+ D src/phase4/models/DiagnosticsMetrics.ts
+ D src/phase4/models/OpportunityExplanation.ts
+ D src/phase4/models/OpportunityQualification.ts
+ D src/phase4/qualification/__tests__/qualifyOpportunity.test.ts
+ D src/phase4/qualification/qualifyOpportunity.ts
+ D src/phase4/runners/runAISynthesisDiagnostic.ts
+ D src/phase4/runners/runAISynthesisManual.ts
+ D src/phase4/utils/correlationReader.ts
+ M src/routes/brainRoutes.ts
+ M src/routes/diagnosticsRoutes.ts
+ M src/routes/health.ts
+ M src/routes/index.ts
+ M src/routes/ingestionRoutes.ts
+ M src/routes/opportunitiesRoutes.ts
+ M src/server.ts
+ M tsconfig.json
+?? .engine-lock
+?? .env.local
+?? .marketai_locked
+?? archives/
+?? contracts/
+?? cron/
+?? dist/
+?? docs/.DS_Store
+?? docs/00_authority/
+?? docs/01_bootstrap/
+?? docs/02_phase_and_state/
+?? docs/03_filesystem_and_build/
+?? docs/04_ingestion/
+?? docs/05_data_sources/
+?? docs/06_database/
+?? docs/07_backend_contracts/
+?? docs/08_diagnostics_and_observability/
+?? docs/09_intelligence_engines/
+?? docs/10_ai_narrative_layer/
+?? docs/11_execution_and_roadmap/
+?? docs/99_archive/
+?? docs/_audit_phase_A_autoclassified.csv
+?? docs/_audit_phase_A_classification.csv
+?? docs/_audit_phase_A_final.csv
+?? docs/_audit_phase_A_structural_summary.txt
+?? docs/_final_structure_snapshot.txt
+?? docs/_phase_C1_delete.log
+?? docs/_phase_C2_phase_sweep.log
+?? logs/
+?? node
+?? node_modules/
+?? prisma/.DS_Store
+?? prisma/migrations/00000000000000_baseline/
+?? prisma/migrations/000_baseline/
+?? prisma/migrations/20251215001135_add_news_article/
+?? prisma/migrations/20251215001918_add_gov_models/
+?? prisma/migrations/20251215003005_add_reddit_posts/
+?? prisma/migrations/20251215004729_add_signal_table/
+?? prisma/migrations/20251215184408_add_market_correlation/
+?? prisma/migrations/20251216225031_add_brain_run/
+?? prisma/migrations/20251217054346_add_government_contracts/
+?? prisma/migrations/20251217054718_add_fmp_government_contracts/
+?? prisma/migrations/20251217171807_add_fmp_earnings_calendar/
+?? prisma/migrations/20251217172925_add_fmp_political_trades/
+?? prisma/migrations/20251217173736_add_fmp_lobbying_disclosures/
+?? prisma/migrations/20251218165612_add_correlation_artifact/
+?? prisma/migrations/20251218171002_add_catalyst_artifact/
+?? prisma/migrations/20251218171345_add_engine_signal_artifact/
+?? prisma/migrations/20251219162842_ingestion_runtime/
+?? prisma/migrations/20251220051923_add_political_trades/
+?? prisma/migrations/20251220060051_add_sentiment_post/
+?? prisma/migrations/20251220075955_add_sentiment_event/
+?? prisma/migrations/20251220135036_add_political_trade_raw/
+?? prisma/migrations_legacy/
+?? prisma/schema.prisma:419
+?? prisma/schema.prisma:433
+?? scripts/.DS_Store
+?? scripts/100_add_phase9_metrics_aggregation_dry_run.sh
+?? scripts/100_phase8_opportunities_real_compute_fallback.sh
+?? scripts/100_scaffold_ai_synthesis_disabled.sh
+?? scripts/100_update_filesystem_canon.sh
+?? scripts/101_fix_phase9_metrics_aggregation.sh
+?? scripts/101_generate_engine_taxonomy_and_lifecycle.sh
+?? scripts/101_scaffold_opportunity_lifecycle_disabled.sh
+?? scripts/102_run_phase9_and_capture_output.sh
+?? scripts/102_scaffold_engine_signals_disabled.sh
+?? scripts/103_lock_phase9_metrics_checkpoint.sh
+?? scripts/103_scaffold_ai_synthesis_disabled.sh
+?? scripts/104_promote_correlationHunter_live_shadow.sh
+?? scripts/104_scaffold_risk_context_disabled.sh
+?? scripts/105_scaffold_opportunity_lifecycle_disabled.sh
+?? scripts/105_verify_correlationHunter_live_shadow.sh
+?? scripts/106_lock_phase10_correlation_live_shadow.sh
+?? scripts/106_scaffold_engine_signals_disabled.sh
+?? scripts/107_promote_catalystHunter_live_shadow.sh
+?? scripts/107_scaffold_ai_synthesis_disabled.sh
+?? scripts/108_scaffold_risk_context_disabled.sh
+?? scripts/108_verify_catalystHunter_live_shadow.sh
+?? scripts/109_lock_phase10_catalyst_live_shadow.sh
+?? scripts/109_scaffold_opportunity_lifecycle_disabled.sh
+?? scripts/10_audit_repo_tree_and_docs.sh
+?? scripts/110_add_phase10_delta_metrics.sh
+?? scripts/110_scaffold_engine_signals_disabled.sh
+?? scripts/111_lock_phase10_delta_metrics_checkpoint.sh
+?? scripts/112_create_phase11_persistence_proposal.sh
+?? scripts/113_enable_phase11_persistence_dry_run.sh
+?? scripts/114_lock_phase11_persistence_checkpoint.sh
+?? scripts/115_enable_phase12_engineSignals_db_dry_run.sh
+?? scripts/116_verify_phase12_engineSignals_db_dry_run.sh
+?? scripts/117_lock_phase12_engineSignals_db_dry_run.sh
+?? scripts/118_enable_phase12_correlationArtifacts_db_dry_run.sh
+?? scripts/119_lock_phase12_correlationArtifacts_db_dry_run.sh
+?? scripts/120_enable_phase12_catalystArtifacts_db_dry_run.sh
+?? scripts/120_scaffold_ai_synthesis_disabled.sh
+?? scripts/120a_add_catalystArtifact_prisma_model.sh
+?? scripts/121_lock_phase12_catalystArtifacts_db_dry_run.sh
+?? scripts/122_enable_phase13_engineSignals_live_write_gate.sh
+?? scripts/123_lock_phase13_engineSignals_live_write.sh
+?? scripts/124_enable_phase13_correlationArtifacts_live_write_gate.sh
+?? scripts/125_lock_phase13_correlationArtifacts_live_write.sh
+?? scripts/126_enable_phase13_catalystArtifacts_live_write_gate.sh
+?? scripts/127_lock_phase13_catalystArtifacts_live_write.sh
+?? scripts/128_enable_phase14_observability_guards.sh
+?? scripts/129_fix_persistSignals_syntax.sh
+?? scripts/130_fix_phase13_artifact_writer_imports.sh
+?? scripts/130_scaffold_risk_context_disabled.sh
+?? scripts/131_hard_fix_phase13_artifact_writers.sh
+?? scripts/132_fix_phase13_artifact_import_extensions.sh
+?? scripts/133_enable_phase15_backfill_readonly.sh
+?? scripts/134_lock_phase15_backfill_readonly.sh
+?? scripts/135_fix_phase15_backfill_prisma_introspection.sh
+?? scripts/136_enable_phase16_slos_and_alerts.sh
+?? scripts/137_enable_phase17_runbooks_and_rollback.sh
+?? scripts/138_phase18_production_cut.sh
+?? scripts/139_add_opportunity_prisma_model_dry_run.sh
+?? scripts/140_add_opportunity_builder_dry_run.sh
+?? scripts/140_scaffold_opportunity_lifecycle_disabled.sh
+?? scripts/141_add_phase19_runner_dry_run.sh
+?? scripts/142_fix_phase19_ai_synthesis_import.sh
+?? scripts/143_add_phase4_ai_dry_run_adapter.sh
+?? scripts/144_fix_phase19_import_to_adapter.sh
+?? scripts/145_fix_phase4_ai_adapter_autowire.sh
+?? scripts/147_sweep_phase4_ai_entrypoints.sh
+?? scripts/148_fix_phase4_dry_run_adapter_to_v1.sh
+?? scripts/149_fix_observability_alerts_final.sh
+?? scripts/150_fix_phase4_dry_run_adapter_to_composer.sh
+?? scripts/150_fix_server_opportunities_imports.sh
+?? scripts/150_fix_server_opportunities_route.sh
+?? scripts/151_fix_observability_alerts_use_canonical_slo.sh
+?? scripts/151_frontend_add_opportunities_api_client.sh
+?? scripts/151_wire_opportunities_route.sh
+?? scripts/152_fix_phase4_dry_run_adapter_map_canonical_output.sh
+?? scripts/152_wire_opportunities_page_live.sh
+?? scripts/153_add_opportunities_widget.sh
+?? scripts/153_fix_phase4_runAISynthesisDryRun_loosen_types.sh
+?? scripts/154_fix_frontend_opportunities_imports.sh
+?? scripts/154_fix_phase19_buildOpportunityDryRun_entry_fields.sh
+?? scripts/155_sweep_fix_frontend_service_imports.sh
+?? scripts/156_fix_frontend_tsconfig_paths.sh
+?? scripts/156_patch_bootstrap_esm_and_phase_seams.sh
+?? scripts/157_fix_frontend_tsconfig_lib_alias.sh
+?? scripts/157_patch_phase4_sparse_input_rule.sh
+?? scripts/159_frontend_tree_scan.sh
+?? scripts/199_sweep_visualization_targets.sh
+?? scripts/200_add_run_event_bus_and_sse.sh
+?? scripts/201_add_opportunities_api_readonly.sh
+?? scripts/201_wire_run_sse_route.sh
+?? scripts/202_add_opportunities_service_readonly.sh
+?? scripts/202_emit_phase9_engine_events.sh
+?? scripts/202_fix_phase9_events.sh
+?? scripts/203_frontend_add_runstream_widget.sh
+?? scripts/203_wire_opportunities_route.sh
+?? scripts/204_add_pipeline_status_api.sh
+?? scripts/204_frontend_mount_runstream_on_home.sh
+?? scripts/205_fix_phase9_engine_events.sh
+?? scripts/206B_detect_source_locations.sh
+?? scripts/206_emit_source_events_wrapper.sh
+?? scripts/206_verify_run_sse_route.sh
+?? scripts/207_add_source_runner_helper.sh
+?? scripts/207_frontend_runstream_files.sh
+?? scripts/208_mount_runstream_widget.sh
+?? scripts/208_wrap_known_sources.sh
+?? scripts/209_add_source_visualization_widget.sh
+?? scripts/209_fix_ingestion_wrappers.sh
+?? scripts/20_bootstrap_system_smoke.sh
+?? scripts/210_fix_source_widget_iterator.sh
+?? scripts/210_mount_sources_panel.sh
+?? scripts/210_rollback_visualization_breakage.sh
+?? scripts/211_rewrite_runIngestionPipeline.sh
+?? scripts/211_triage_if_still_red.sh
+?? scripts/212_fix_res_success_and_types.sh
+?? scripts/212_rewrite_scheduler.sh
+?? scripts/213_fix_success_misuse_and_dts_include.sh
+?? scripts/213_rewrite_ingestionLogger.sh
+?? scripts/214_fix_missing_parens_from_success_rewrite.sh
+?? scripts/214_fix_missing_parens_from_success_rewrite_v2.sh
+?? scripts/214_rewrite_SourceStreamWidget.sh
+?? scripts/215_fix_corrupted_result_status_assignments.sh
+?? scripts/215_fix_ingestion_pipeline_callers.sh
+?? scripts/216_fix_pipeline_result_fields.sh
+?? scripts/216_force_repair_result_status_literal.sh
+?? scripts/217_fix_logIngestionRun_calls.sh
+?? scripts/217_normalize_response_accessors.sh
+?? scripts/218_fix_statuscode_call_and_fetch_status.sh
+?? scripts/219_final_fix_fetch_status_and_ingestion_params.sh
+?? scripts/220_fix_statuscode_and_ingestionlogger_payloads.sh
+?? scripts/300_add_documentation_system_pointers.sh
+?? scripts/300_update_docs_prevent_build_loops.sh
+?? scripts/301_lock_esm_response_rules.sh
+?? scripts/301_resume_doc_fixes_post_build_loop.sh
+?? scripts/302_lock_cascade_repairs.sh
+?? scripts/303_echo_sanity_fix.sh
+?? scripts/303_lock_frontend_root.sh
+?? scripts/304_backend_build_recovery_scan.sh
+?? scripts/304_document_response_corruption.sh
+?? scripts/305_lock_ai_bootstrap.sh
+?? scripts/305_terminal_echo_guard.sh
+?? scripts/306_run_backend_build.sh
+?? scripts/307_run_frontend_build.sh
+?? scripts/309_check_ingestion_status.sh
+?? scripts/30_phase5_canon_lock.sh
+?? scripts/310_dump_ingestion_registry.sh
+?? scripts/311_restore_phase2_ingestion_registry.sh
+?? scripts/313_verify_frontend_ingestion_visibility.sh
+?? scripts/314_run_full_stack_dev.sh
+?? scripts/315_full_stack_prod_build_and_start.sh
+?? scripts/317_enable_remaining_fmp_ingestion_safe_once.sh
+?? scripts/318_run_polygon_ingestion_safe_once.sh
+?? scripts/319_run_sp500_universe_ingestion_safe_once.sh
+?? scripts/31_create_frontend_api_client.sh
+?? scripts/320_snapshot_ui_ingestion_state.sh
+?? scripts/321_frontend_ingestion_ui_clarity.sh
+?? scripts/321b_frontend_ingestion_ui_clarity_safe.sh
+?? scripts/321c_frontend_ingestion_ui_clarity_pages_safe.sh
+?? scripts/321d_frontend_ingestion_ui_clarity_canonical.sh
+?? scripts/321e_fix_ingestion_ui_hook_usage.sh
+?? scripts/321f_fix_ingestion_ui_hook_shape.sh
+?? scripts/321g_fix_ingestion_ui_health_logic.sh
+?? scripts/321h_fix_ingestion_ui_contract_final.sh
+?? scripts/322_command_center_ingestion_activity_widget.sh
+?? scripts/322b_command_center_ingestion_activity_widget_FIX.sh
+?? scripts/322c_fix_use_client_order.sh
+?? scripts/323_add_ingestion_status_container.sh
+?? scripts/323b_fix_app_page_module.sh
+?? scripts/323c_fix_ingestion_container_widget_misuse.sh
+?? scripts/324_add_state_change_highlighting.sh
+?? scripts/324_fix_ingestion_ui_wiring.sh
+?? scripts/325_fix_ingestion_container_import.sh
+?? scripts/326_fix_ingestion_container_shape.sh
+?? scripts/327_fix_ingestion_container_adapter.sh
+?? scripts/328_backend_alias_diagnostics_ingestion_to_status.sh
+?? scripts/329_fix_ingestion_frontend_adapter.sh
+?? scripts/32_document_diagnostics_contract.sh
+?? scripts/32_wire_diagnostics_page.sh
+?? scripts/330_claude_ui_handoff_steps.sh
+?? scripts/330_frontend_lock_ingestion_status_canon.sh
+?? scripts/330_restore_command_center_layout_safe.sh
+?? scripts/331_fix_diagnostics_ingestion_contract.sh
+?? scripts/331_fix_opportunities_widget_contract.sh
+?? scripts/331_promote_ingestion_registry_to_diagnostics.sh
+?? scripts/332_add_ingestion_status_container.sh
+?? scripts/332_fix_ingestion_container_named_export.sh
+?? scripts/332_fix_ingestion_ui_contract.sh
+?? scripts/333_backend_ingestion_runtime_status.sh
+?? scripts/333_fix_ingestion_container_final_mapping.sh
+?? scripts/333_fix_ingestion_status_container_contract.sh
+?? scripts/334_add_ingestion_state_highlighting.sh
+?? scripts/334_fix_ingestion_hook_final.sh
+?? scripts/334_frontend_ingestion_activity_ui.sh
+?? scripts/335_add_run_ingestion_control.sh
+?? scripts/335_fix_diagnostics_key_to_name.sh
+?? scripts/335_frontend_ingestion_polling.sh
+?? scripts/336_backend_restore_registry_only_status.sh
+?? scripts/336_fix_ingestionui_key_to_name.sh
+?? scripts/336_fix_run_ingestion_button_import.sh
+?? scripts/337_fix_ingestion_container_adapter.sh
+?? scripts/337_frontend_fix_useIngestionStatus_typing.sh
+?? scripts/337_humanize_top_opportunities_ui.sh
+?? scripts/338_add_frontend_ingestion_api_adapter.sh
+?? scripts/338_fix_opportunities_widget_contract_safe.sh
+?? scripts/338_frontend_registry_consumer_sweep.sh
+?? scripts/338b_frontend_registry_consumer_sweep_strict.sh
+?? scripts/339_enable_news_ingestion.sh
+?? scripts/33_add_diagnostics_routes.sh
+?? scripts/33_fix_frontend_api_client.sh
+?? scripts/33b_add_diagnostics_routes_autodiscover.sh
+?? scripts/33c_add_diagnostics_routes_mac_safe.sh
+?? scripts/33d_fix_ingestion_status_types.sh
+?? scripts/33e_normalize_ingestion_status_routes.sh
+?? scripts/33f_remove_duplicate_api_diagnostics.sh
+?? scripts/33g_fix_health_route_shadowing.sh
+?? scripts/33h_rewrite_server_canonical.sh
+?? scripts/340_add_ingestion_run_endpoint.sh
+?? scripts/341_fix_ingestion_run_endpoint_esm.sh
+?? scripts/342_autofix_ingestion_run_import.sh
+?? scripts/343_fix_ingestion_run_route_final.sh
+?? scripts/344_fix_ingestion_run_route_with_runid.sh
+?? scripts/345_wire_ingestion_status_reporting.sh
+?? scripts/346_fix_frontend_ingestion_live_adapter.sh
+?? scripts/347_fix_diagnosticsui_implicit_any.sh
+?? scripts/348_fix_diagnosticsui_all_implicit_any.sh
+?? scripts/349_fix_ingestionui_implicit_any.sh
+?? scripts/34_add_backend_diagnostics_routes.sh
+?? scripts/34_fix_frontend_diagnostics.sh
+?? scripts/350_add_ingestion_runs_table.sh
+?? scripts/350_fix_ingestionstatuscontainer_implicit_any.sh
+?? scripts/351_add_ingestion_runtime_writer.sh
+?? scripts/351_backend_harden_ingestion_status.sh
+?? scripts/352_fix_ingestion_pipeline_imports_canon.sh
+?? scripts/352_sweep_fix_ingestion_runtime_prisma_imports.sh
+?? scripts/352_wire_pipeline_to_runtime.sh
+?? scripts/353_add_ingestion_runtime_and_fix_pipeline.sh
+?? scripts/354_rollback_broken_ingestion_pipeline.sh
+?? scripts/356_neutralize_runIngestionPipeline_CANON.sh
+?? scripts/357_fix_runIngestionDryRun_void_pipeline.sh
+?? scripts/360_add_ingestion_runtime_prisma.sh
+?? scripts/361_add_ingestion_runtime_writer.sh
+?? scripts/362_wire_pipeline_runtime.sh
+?? scripts/365_fix_ingestion_runtime_imports.sh
+?? scripts/366_fix_prisma_import_ts_source.sh
+?? scripts/367_fix_prisma_import_nodenext.sh
+?? scripts/368_fix_prisma_import_authoritative.sh
+?? scripts/369_fix_prisma_import_dynamic.sh
+?? scripts/370_fix_ingestion_runtime_prisma_path.sh
+?? scripts/371_create_ingestion_runs_table.sh
+?? scripts/372_add_ingestion_runtime_writer.sh
+?? scripts/373_add_ingestion_runs_endpoint.sh
+?? scripts/400_reset_ingestion_runtime_canon.sh
+?? scripts/401_backend_canonize_ingestion_registry_and_status.sh
+?? scripts/401_fix_ingestion_run_route.sh
+?? scripts/402_backend_fix_post_ingestion_run_route.sh
+?? scripts/402_frontend_ingestion_contract_sweep.sh
+?? scripts/403_frontend_force_live_ingestion_status_endpoint.sh
+?? scripts/40_phase5_canonical_lock.sh
+?? scripts/410_fix_backend_build_errors.sh
+?? scripts/412_frontend_ingestion_contract_sweep_ignore_baks.sh
+?? scripts/41_phase5_snapshot.sh
+?? scripts/501_update_bootstrap_index.sh
+?? scripts/502_update_backend_architecture_failures.sh
+?? scripts/50_phase6_scope_lock.sh
+?? scripts/53_phase6_smoke.sh
+?? scripts/60_add_command_center_endpoint.sh
+?? scripts/60b_wire_command_center_routes_safe.sh
+?? scripts/63_add_opportunities_endpoint.sh
+?? scripts/66_run_opportunity_engine_live.sh
+?? scripts/66a_discover_ingestion_context.sh
+?? scripts/66b_discover_ingestion_context_mac_safe.sh
+?? scripts/67_run_pipeline_with_opportunities.sh
+?? scripts/68_fix_opportunity_registry_path.sh
+?? scripts/69_fix_bundle_processing_order.sh
+?? scripts/70_reset_bundle_processed_flag.sh
+?? scripts/71_fix_opportunity_engine_lifecycle.sh
+?? scripts/72_opportunities_audit_and_force_run.sh
+?? scripts/73_fix_opportunity_engine_schema_alignment.sh
+?? scripts/74_fix_opportunity_engine_runtime_schema_safe.sh
+?? scripts/80_create_ENGINE_TAXONOMY_AND_LIFECYCLE_doc.sh
+?? scripts/80_create_engine_contract_docs.sh
+?? scripts/81_fix_registry_phase62_engines_syntax.sh
+?? scripts/81_scaffold_disabled_engines.sh
+?? scripts/82_fix_registry_undefined_entries.sh
+?? scripts/82_scaffold_correlation_artifacts.sh
+?? scripts/83_add_engine_contracts.sh
+?? scripts/83_fix_registry_array_syntax.sh
+?? scripts/84_add_signal_persistence.sh
+?? scripts/84_fix_registry_double_commas.sh
+?? scripts/85_create_engine_taxonomy_canon.sh
+?? scripts/85_fix_registry_disabled_engines.sh
+?? scripts/86_create_phase7_activation_plan.sh
+?? scripts/87_scaffold_correlation_hunter_engine.sh
+?? scripts/88_fix_correlation_hunter_import_path.sh
+?? scripts/89_add_catalyst_hunter_scaffold.sh
+?? scripts/90_add_ai_synthesis_scaffold.sh
+?? scripts/90_scaffold_correlation_hunter_disabled.sh
+?? scripts/90_update_bootstrap_filesystem_paths.sh
+?? scripts/90b_fix_correlation_hunter_status_type.sh
+?? scripts/90c_fix_correlation_hunter_note_field.sh
+?? scripts/91_add_risk_context_scaffold.sh
+?? scripts/91_document_ingestion_diagnostics_stub.sh
+?? scripts/91_scaffold_catalyst_hunter_disabled.sh
+?? scripts/92_add_opportunity_lifecycle_scaffold.sh
+?? scripts/92_phase6_attribution_confidence_audit.sh
+?? scripts/92_scaffold_ai_synthesis_disabled.sh
+?? scripts/93_add_engine_signals_scaffold.sh
+?? scripts/93_lock_phase6_audit_checkpoint.sh
+?? scripts/93_scaffold_risk_context_disabled.sh
+?? scripts/94_add_correlation_artifacts_scaffold.sh
+?? scripts/94_create_phase7_activation_proposal.sh
+?? scripts/94_scaffold_opportunity_lifecycle_disabled.sh
+?? scripts/95_add_catalyst_hunter_scaffold.sh
+?? scripts/95_scaffold_engine_signals_disabled.sh
+?? scripts/95_scaffold_phase9_pipeline_runner.sh
+?? scripts/96_add_correlation_hunter_scaffold.sh
+?? scripts/96_fix_phase9_runner_imports.sh
+?? scripts/96_phase9_engine_readiness_map.sh
+?? scripts/96_scaffold_ai_synthesis_disabled.sh
+?? scripts/97_add_ai_synthesis_scaffold.sh
+?? scripts/97_enable_phase9_engines_registry.sh
+?? scripts/97_scaffold_opportunity_lifecycle_disabled.sh
+?? scripts/98_create_ENGINE_TAXONOMY_AND_LIFECYCLE.sh
+?? scripts/98_run_phase9_pipeline_dry_run.sh
+?? scripts/98_scaffold_engine_signals_disabled.sh
+?? scripts/99_closeout_docs_sync.sh
+?? scripts/99_scaffold_risk_context_disabled.sh
+?? scripts/99b_lock_phase9_dry_run_checkpoint.sh
+?? scripts/README.md
+?? scripts/_internal/
+?? scripts/_runs/
+?? scripts/add-build-unified-fd.sh
+?? scripts/add-crypto-fear-greed.sh
+?? scripts/add-crypto-weekend-spike.sh
+?? scripts/add-crypto-weekend-to-equity-lead.sh
+?? scripts/add-fed-funds-ingestion.sh
+?? scripts/add-fed-funds-module.sh
+?? scripts/add_catalyst_artifact_schema.sh
+?? scripts/add_correlation_artifact_schema.sh
+?? scripts/add_engine_signal_artifact_schema.sh
+?? scripts/add_fred_cpi_source.sh
+?? scripts/add_fred_unemployment_rate.sh
+?? scripts/add_phase3_catalyst_hunter_manual_runner.sh
+?? scripts/add_phase3_catalyst_hunter_v1.sh
+?? scripts/add_phase3_correlation_hunter_manual_runner.sh
+?? scripts/add_phase3_correlation_hunter_v1.sh
+?? scripts/add_phase3_correlation_hunter_v1_metrics.sh
+?? scripts/add_phase3_engine_signals_manual_runner.sh
+?? scripts/add_phase3_engine_signals_v1.sh
+?? scripts/add_phase4_ai_synthesis_prompt_v1.sh
+?? scripts/add_phase4_ai_synthesis_v1_scaffold.sh
+?? scripts/add_phase4_openai_provider_v1.sh
+?? scripts/add_sec_enforcement_snapshot.sh
+?? scripts/apply_band_fix_and_rerun.sh
+?? scripts/apply_phase5_weights_dry_run.sh
+?? scripts/apply_phase5_weights_live.sh
+?? scripts/archive_consolidation.sh
+?? scripts/audit_EngineSignalArtifact_model.sh
+?? scripts/audit_IntelligenceBundle_model.sh
+?? scripts/audit_Signal_model.sh
+?? scripts/audit_adapter_stubs.sh
+?? scripts/audit_prisma_models.sh
+?? scripts/audit_signalDetection_exports.sh
+?? scripts/build-asset-final-rank.ts
+?? scripts/build-asset-signal-score.ts
+?? scripts/build-market-regime.ts
+?? scripts/build-sector-pressure-momentum.ts
+?? scripts/build-sector-pressure.ts
+?? scripts/cleanup-placeholder-rows.sh
+?? scripts/cleanup_remove_bak_files.sh
+?? scripts/corr_001_add_correlation_persistence_runner.sh
+?? scripts/corr_002_remove_invalid_correlation_runner.sh
+?? scripts/create-crypto-ohlc-module.sh
+?? scripts/create-ingestion-context.sh
+?? scripts/create_phase5_placeholder.sh
+?? scripts/cron_ingestion_monitor.sh
+?? scripts/db_check_market_correlation_count.sh
+?? scripts/db_check_market_correlation_psql.sh
+?? scripts/db_row_check.sh
+?? scripts/db_show_recent_market_correlation.sh
+?? scripts/debug-crypto-ohlc.sh
+?? scripts/diag_010_dump_bundle_signals.sh
+?? scripts/diagnose-fed-commentary.sh
+?? scripts/diagnostics_001_project_introspection.sh
+?? scripts/diagnostics_002_intelligence_execution_surface.sh
+?? scripts/diagnostics_003_portfolio_fusion_inspection.sh
+?? scripts/diagnostics_add_bundle_execution_trace.sh
+?? scripts/disable-all-ingestion.sh
+?? scripts/disable-ofac-sanctions.sh
+?? scripts/disable-options-flow.sh
+?? scripts/disable_legacy_intelligence_bundle_writer.sh
+?? scripts/disable_phase4_ai_persistence.sh
+?? scripts/discover_ingestion_writes.ts
+?? scripts/docs_001_update_database_canon.sh
+?? scripts/docs_002_update_ingestion_status_canon.sh
+?? scripts/docs_003_update_ingestion_canon.sh
+?? scripts/docs_015_fmp_dividend_ingestion_fix.sh
+?? scripts/docs_consolidate_02_phase_and_state.sh
+?? scripts/docs_consolidate_04_ingestion.sh
+?? scripts/docs_consolidate_05_data_sources.sh
+?? scripts/docs_consolidate_06_database.sh
+?? scripts/docs_consolidate_07_backend_contracts.sh
+?? scripts/docs_consolidate_08_diagnostics.sh
+?? scripts/docs_consolidate_09_engines.sh
+?? scripts/docs_consolidate_10_ai_layer.sh
+?? scripts/docs_consolidate_11_execution.sh
+?? scripts/docs_diff_canon_leakage.sh
+?? scripts/docs_diff_canon_leakage_clean.sh
+?? scripts/docs_diff_duplicate_files.sh
+?? scripts/docs_diff_duplicate_sections.sh
+?? scripts/docs_finalize_cleanup_and_diff.sh
+?? scripts/docs_fix_duplicate_engines.sh
+?? scripts/docs_fix_engines_location.sh
+?? scripts/docs_global_audit.sh
+?? scripts/docs_remove_legacy_archive.sh
+?? scripts/docs_root_cleanup_final.sh
+?? scripts/docs_strip_system_canon_from_backend.sh
+?? scripts/enable-all-ingestion.sh
+?? scripts/enable-and-run-crypto-equity-correlation.sh
+?? scripts/enable-cftc-global-write.sh
+?? scripts/enable-only-crypto-equity-correlation.sh
+?? scripts/enable-only-crypto-etf-flows.sh
+?? scripts/enable-only-crypto-ohlc.sh
+?? scripts/enable-only-google-trends.sh
+?? scripts/enable-only-options-flow.sh
+?? scripts/enable-only-polygon.sh
+?? scripts/enable-only-sec-company-facts.sh
+?? scripts/enable-only-sec-financials.sh
+?? scripts/enable_live_ingestion_flags.sh
+?? scripts/enable_live_tier1_tier2.sh
+?? scripts/enable_live_tier1_tier2_v2.sh
+?? scripts/enable_registry_tier1_tier2.sh
+?? scripts/engine_010_register_ofac_snapshot.sh
+?? scripts/engine_010_register_ofac_snapshot_FIX.sh
+?? scripts/engine_011_register_ofac_snapshot_WITH_BUNDLE.sh
+?? scripts/engine_012_register_ofac_snapshot_WITH_TICKER.sh
+?? scripts/engine_013_register_ofac_snapshot_FIXED_TICKER.sh
+?? scripts/engine_014_register_ofac_snapshot_SCHEMA_CORRECT.sh
+?? scripts/engine_015_fix_ofac_engine_artifact.sh
+?? scripts/engine_016_fix_ofac_engine_artifact_schema.sh
+?? scripts/engine_data_surface_check.ts
+?? scripts/engine_dev_001_scan_engine_surface.sh
+?? scripts/engine_dev_002_apply_correlation_hunter.sh
+?? scripts/engine_dev_002b_fix_ts_errors.sh
+?? scripts/engine_dev_002c_fix_paths_and_types.sh
+?? scripts/engine_dev_002d_final_fix.sh
+?? scripts/engine_dev_002e_nodenext_final.sh
+?? scripts/engine_dev_002g_fix_engine_imports.sh
+?? scripts/engine_dev_002g_fix_engine_imports_final.sh
+?? scripts/engine_dev_002g_patch_tsconfig.sh
+?? scripts/engine_dev_002g_patch_tsconfig_fixed.sh
+?? scripts/engine_dev_002h_add_alias_shims.sh
+?? scripts/engine_dev_003a_add_ai_router.sh
+?? scripts/engine_dev_003b_add_cache_lookup.sh
+?? scripts/engine_dev_003c_upgrade_correlation_hunter.sh
+?? scripts/engine_dev_004_regime_fusion_scaffold.sh
+?? scripts/engine_dev_004b_fix_regime_fusion_paths.sh
+?? scripts/engine_dev_004c_register_regime_fusion.sh
+?? scripts/engine_dev_004d_add_schema_alias_shim.sh
+?? scripts/engine_dev_004e_register_regime_fusion_engine_name.sh
+?? scripts/engine_dev_005_regime_synthesis_ai_cached.sh
+?? scripts/engine_dev_005b_fix_schema_alias_exports.sh
+?? scripts/engine_dev_006_meta_fusion_cost_aware.sh
+?? scripts/engine_dev_006b_fix_jsonvalue_access.sh
+?? scripts/engine_dev_006b_fix_jsonvalue_access_v2.sh
+?? scripts/engine_dev_007_confidence_decay_engine.sh
+?? scripts/engine_dev_008_storage_hygiene_prune_artifacts.sh
+?? scripts/engine_dev_009_engine_performance_attribution.sh
+?? scripts/engine_dev_010_auto_upgrade_prompt_generator.sh
+?? scripts/engine_dev_011_self_evaluation_runner.sh
+?? scripts/engine_dev_012_opportunity_outcome_capture.sh
+?? scripts/engine_dev_013_ai_governance_gate.sh
+?? scripts/engine_dev_014_contradiction_detector.sh
+?? scripts/engine_dev_015_confidence_calibration.sh
+?? scripts/engine_dev_015b_fix_confidence_calibration_types.sh
+?? scripts/engine_dev_016_auto_upgrade_planner.sh
+?? scripts/engine_dev_016b_remove_ai_import_and_stub.sh
+?? scripts/engine_dev_017_self_directed_experiment_runner.sh
+?? scripts/engine_dev_018_auto_engine_weight_adjuster.sh
+?? scripts/engine_dev_019_meta_learning_scheduler.sh
+?? scripts/engine_dev_020_self_improvement_loop_controller.sh
+?? scripts/engine_dev_021_ai_cost_attribution_and_budget_guardrails.sh
+?? scripts/engine_dev_022_catalyst_hunter_v1_foundation.sh
+?? scripts/engine_dev_023_catalyst_hunter_v2_ai_clusters_cached_guarded.sh
+?? scripts/engine_dev_024_opportunity_synthesizer_v1.sh
+?? scripts/engine_dev_025_opportunity_backtest_evaluator.sh
+?? scripts/engine_dev_025b_fix_implicit_any.sh
+?? scripts/engine_dev_026_fix_shadow_run_type.sh
+?? scripts/engine_dev_027_shadow_dry_run.sh
+?? scripts/engine_dev_028_shadow_run_audit.sh
+?? scripts/engine_dev_029_shadow_signal_density_report.sh
+?? scripts/engine_dev_029b_fix_shadow_execution.sh
+?? scripts/engine_dev_030_intelligence_bundle_shadow_generator.sh
+?? scripts/engine_dev_030b_fix_bundle_engine_imports.sh
+?? scripts/engine_dev_030c_fix_opportunity_import.sh
+?? scripts/engine_dev_030d_guard_regime_synthesis_ai.sh
+?? scripts/engine_dev_030e_fix_regime_synthesis_paths_and_stub.sh
+?? scripts/engine_dev_030f_guard_meta_fusion_ai_imports.sh
+?? scripts/engine_dev_031_shadow_bundle_inspector.sh
+?? scripts/engine_dev_032_intelligence_latest_route.sh
+?? scripts/engine_dev_032b_fix_route_mount.sh
+?? scripts/engine_dev_032c_fix_double_api_prefix.sh
+?? scripts/engine_dev_032d_print_routes.sh
+?? scripts/engine_dev_033_wire_explainability.sh
+?? scripts/engine_dev_033b_fix_explain_import.sh
+?? scripts/engine_dev_033c_hard_fix_explainability.sh
+?? scripts/engine_dev_033d_define_explained_signals.sh
+?? scripts/engine_dev_033e_fix_signal_explainability.sh
+?? scripts/engine_dev_033f_fix_signal_json_typing.sh
+?? scripts/engine_dev_034_ai_explanation_narrative.sh
+?? scripts/engine_dev_034b_fix_explanation_import.sh
+?? scripts/engine_dev_034c_fix_explanation_import_final.sh
+?? scripts/engine_dev_034d_fix_narrative_contract.sh
+?? scripts/engine_dev_035_narrative_cache.sh
+?? scripts/engine_dev_035b_fix_narrative_cache_import.sh
+?? scripts/engine_dev_035c_fix_narrative_json_access.sh
+?? scripts/engine_dev_036_narrative_cache_metrics.sh
+?? scripts/engine_dev_037_opportunity_narrative_injection.sh
+?? scripts/engine_dev_037b_fix_narrative_cache_db_import.sh
+?? scripts/engine_dev_038_ai_model_router.sh
+?? scripts/engine_dev_038b_add_modelrouter_compat_shim.sh
+?? scripts/engine_dev_038c_fix_modelrouter_return_shape.sh
+?? scripts/engine_dev_038d_fix_ai_call_sites.sh
+?? scripts/engine_dev_038e_restore_canonical_exports.sh
+?? scripts/engine_dev_038f_restore_orchestrator_and_provider.sh
+?? scripts/engine_dev_038g_widen_public_contracts.sh
+?? scripts/engine_dev_038h_widen_contracts_final.sh
+?? scripts/engine_dev_039_live_narrative.sh
+?? scripts/engine_dev_039b_fix_narrative_chain.sh
+?? scripts/engine_dev_039c_fix_prisma_and_narrative_types.sh
+?? scripts/engine_dev_039e_add_brain_prisma_shim.sh
+?? scripts/engine_dev_040_ai_narrative_v1.sh
+?? scripts/engine_dev_041_fix_opportunity_narrative_path.sh
+?? scripts/engine_dev_041_opportunity_narrative_persistence.sh
+?? scripts/engine_dev_041b_fix_prisma_import.sh
+?? scripts/engine_dev_042_run_ai_narrative_shadow.sh
+?? scripts/engine_dev_043_opportunity_narrative_live_gate.sh
+?? scripts/engine_dev_044_opportunity_outcome_scoring.sh
+?? scripts/engine_dev_044b_fix_and_run_outcome_scoring.sh
+?? scripts/engine_dev_044c_fix_prisma_import_and_run.sh
+?? scripts/engine_dev_044d_fix_evaluation_record_id.sh
+?? scripts/engine_dev_045_engine_accuracy_leaderboard.sh
+?? scripts/engine_dev_045_fix_and_run_accuracy_leaderboard.sh
+?? scripts/engine_dev_045c_fix_leaderboard_prisma.sh
+?? scripts/engine_dev_045d_fix_leaderboard_prisma_shim.sh
+?? scripts/engine_dev_046_opportunity_outcome_ingestion.sh
+?? scripts/engine_dev_047_opportunity_mvp_pipeline.sh
+?? scripts/engine_dev_047_run_pipeline.sh
+?? scripts/engine_dev_048_catalyst_hunter_v1_historical_analogs.sh
+?? scripts/engine_dev_048b_fix_bundle_shadow_generator_catalyst.sh
+?? scripts/engine_dev_048c_fix_bundle_shadow_generator_compile.sh
+?? scripts/engine_dev_048d_fix_correlation_signal_shape.sh
+?? scripts/engine_dev_048e_fix_engine_name_boundary.sh
+?? scripts/engine_dev_048f_fix_metadata_strictness.sh
+?? scripts/engine_dev_048g_fix_persistence_guard_runtime.sh
+?? scripts/engine_dev_048h_fix_phase3_runtime.sh
+?? scripts/engine_dev_048i_fix_prisma_json_cast.sh
+?? scripts/engine_dev_049_catalyst_hunter_v1.sh
+?? scripts/engine_dev_049b_fix_and_wire_catalyst.sh
+?? scripts/engine_dev_049c_fix_and_wire_catalyst.sh
+?? scripts/engine_dev_050_signal_detection_v1.sh
+?? scripts/engine_dev_050b_wire_signal_detection.sh
+?? scripts/engine_dev_050c_force_register_signal_engine.sh
+?? scripts/engine_dev_050c_register_signal_engine.sh
+?? scripts/engine_dev_050d_unify_engine_name_types_no_more_union_churn.sh
+?? scripts/engine_dev_050e_bundle_dedup_guard.sh
+?? scripts/engine_dev_050f_fix_bundle_dedup_vars.sh
+?? scripts/engine_dev_050g_fix_runhash_reference.sh
+?? scripts/engine_dev_050h_define_runhash_canonically.sh
+?? scripts/engine_dev_050i_fix_where_clause_syntax.sh
+?? scripts/engine_dev_050j_define_runhash.sh
+?? scripts/engine_dev_050k_define_runhash_hardfix.sh
+?? scripts/engine_dev_050m_fix_bundle_shadow_generator_runhash.sh
+?? scripts/engine_dev_051_signal_detection_v1.sh
+?? scripts/engine_dev_051b_fix_signal_detection_imports.sh
+?? scripts/engine_dev_052_bundle_compression_harddrop.sh
+?? scripts/engine_dev_052_wire_bundle_compression.sh
+?? scripts/engine_dev_052b_add_bundle_compression_field.sh
+?? scripts/engine_dev_052c_apply_compression_migration.sh
+?? scripts/engine_dev_052d_force_add_compression_column.sh
+?? scripts/engine_dev_053_opportunity_promotion_gate_v1.sh
+?? scripts/engine_dev_054_db_stabilization.sh
+?? scripts/engine_dev_055_opportunity_scoring_v1.sh
+?? scripts/engine_dev_056_opportunity_score_persist_artifact_v1.sh
+?? scripts/engine_dev_056b_fix_opportunity_scoring_imports.sh
+?? scripts/engine_dev_056c_fix_scoring_input_cast.sh
+?? scripts/engine_dev_056d_fix_missing_type_import.sh
+?? scripts/engine_dev_057_signal_detection_v2.sh
+?? scripts/engine_dev_057a_fix_signal_detection_v2_imports.sh
+?? scripts/engine_dev_057b_fix_signal_detection_v2_import.sh
+?? scripts/engine_dev_058_opportunity_promotion_gate_v1.sh
+?? scripts/engine_dev_058b_fix_promotion_prisma_import.sh
+?? scripts/engine_dev_059_opportunity_materialization_v1.sh
+?? scripts/engine_dev_059a_add_opportunity_promotion_model.sh
+?? scripts/engine_dev_059a_add_opportunity_promotion_model_live.sh
+?? scripts/engine_dev_059b_link_opportunity_promotion_live.sh
+?? scripts/engine_dev_059c_fix_opportunity_rationale_cast.sh
+?? scripts/engine_dev_059d_remove_opportunity_action_field.sh
+?? scripts/engine_dev_059e_remove_opportunity_confidence_field.sh
+?? scripts/engine_dev_059f_remove_opportunity_engine_version.sh
+?? scripts/engine_dev_059g_remove_opportunity_status.sh
+?? scripts/engine_dev_060_fix_missing_promotion_and_materialization_runners.sh
+?? scripts/engine_dev_060_run_full_pipeline_livegate.sh
+?? scripts/engine_dev_061_add_promotion_rules_v1.sh
+?? scripts/engine_dev_061b_fix_promotion_rules_import.sh
+?? scripts/engine_dev_062_lock_v1_contracts.sh
+?? scripts/engine_dev_063_add_missing_signal_engines_v1.sh
+?? scripts/engine_dev_064_wire_all_signal_engines.sh
+?? scripts/engine_dev_064b_guard_engine_execution.sh
+?? scripts/engine_dev_064c_guard_engine_execution.sh
+?? scripts/engine_dev_064d_fix_bundle_engine_loop.sh
+?? scripts/engine_dev_064e_reset_bundle_shadow_generator.sh
+?? scripts/engine_dev_064f_fix_bundle_shadow_import_and_tickerid.sh
+?? scripts/expand_phase3_catalyst_hunter_metrics.sh
+?? scripts/expand_phase3_correlation_hunter_metrics.sh
+?? scripts/expand_phase3_correlation_hunter_v1_temporal.sh
+?? scripts/extend-agency-normalization.ts
+?? scripts/extend-fd-agency-map.ts
+?? scripts/fix-bls-initial-jobless-claims-status.sh
+?? scripts/fix-build-unified-fd-agencies-scope.sh
+?? scripts/fix-build-unified-fd-agencies.ts
+?? scripts/fix-build-unified-fd-hard-reset.sh
+?? scripts/fix-cftc-cot-csv.sh
+?? scripts/fix-cftc-cot-disaggregated-final.sh
+?? scripts/fix-cftc-cot-final.sh
+?? scripts/fix-cftc-cot-strict-null.sh
+?? scripts/fix-cftc-cot-types.sh
+?? scripts/fix-cftc-cot-year.sh
+?? scripts/fix-crypto-equity-correlation-ctx.sh
+?? scripts/fix-crypto-liquidations-module.sh
+?? scripts/fix-crypto-liquidations-status.sh
+?? scripts/fix-crypto-liquidations-typing.sh
+?? scripts/fix-crypto-ohlc-manual-upsert.sh
+?? scripts/fix-crypto-ohlc-no-templates.sh
+?? scripts/fix-crypto-ohlc-status-literal.sh
+?? scripts/fix-crypto-ohlc-status.sh
+?? scripts/fix-crypto-ohlc-typing.sh
+?? scripts/fix-crypto-weekend-to-equity-typing.sh
+?? scripts/fix-fed-commentary-deps.sh
+?? scripts/fix-fed-commentary-timeline-real.sh
+?? scripts/fix-fed-funds-manual.sh
+?? scripts/fix-fed-funds-rate.sh
+?? scripts/fix-fred-housing-final.sh
+?? scripts/fix-fred-housing-manual-upsert.sh
+?? scripts/fix-fred-housing-return-type.sh
+?? scripts/fix-ingestion-callers.sh
+?? scripts/fix-ingestion-prisma.sh
+?? scripts/fix-ingestion-route.sh
+?? scripts/fix-manifest-bls-initial-jobless-claims.sh
+?? scripts/fix-manifest-crypto-liquidations.sh
+?? scripts/fix-manifest-fed-balance-sheet.sh
+?? scripts/fix-manifest-registry.sh
+?? scripts/fix-options-flow-array-placement.sh
+?? scripts/fix-options-flow-duplicate.sh
+?? scripts/fix-options-flow-missing-run.sh
+?? scripts/fix-pipeline-context-and-gating.sh
+?? scripts/fix-polygon-volume-bigint.sh
+?? scripts/fix-runIngestionPipeline-compat.sh
+?? scripts/fix-runIngestionPipeline-no-templates.sh
+?? scripts/fix-runIngestionPipeline-signature.sh
+?? scripts/fix-sec-company-facts-write.sh
+?? scripts/fix-tariff-trade-events-real.sh
+?? scripts/fix-trump-truth-social-real.sh
+?? scripts/fix-usaspending-error-typing-hard.sh
+?? scripts/fix-usaspending-error-typing.sh
+?? scripts/fix-usaspending-status-final.sh
+?? scripts/fix-usaspending-status-literal.sh
+?? scripts/fix_001_remove_fundamentals_from_engineRegistry.sh
+?? scripts/fix_002_replace_fundamentals_engine.sh
+?? scripts/fix_003_fundamentals_engine_pure_compute.sh
+?? scripts/fix_004_bundleShadowGenerator_persist_fundamentals_artifact.sh
+?? scripts/fix_005_capture_bundleId_for_fundamentals.sh
+?? scripts/fix_006_repair_bundleShadowGenerator_fundamentals_block.sh
+?? scripts/fix_007_reset_bundleShadowGenerator_remove_fundamentals.sh
+?? scripts/fix_008_restore_bundleShadowGenerator_from_backup.sh
+?? scripts/fix_009_bundle_execute_missing_engines.sh
+?? scripts/fix_009_hard_reset_bundleShadowGenerator.sh
+?? scripts/fix_010_bundle_signal_key_aliases.sh
+?? scripts/fix_010_make_bundleShadowGenerator_compile.sh
+?? scripts/fix_011_bundle_execute_signalDetection.sh
+?? scripts/fix_012_bundleShadowGenerator_canonical.sh
+?? scripts/fix_012_bundleShadowGenerator_signalDetection_and_aliases.sh
+?? scripts/fix_013_bundleShadowGenerator_finalize.sh
+?? scripts/fix_013_bundleShadowGenerator_type_correct.sh
+?? scripts/fix_014_bundleShadowGenerator_canonical_keys.sh
+?? scripts/fix_014_remove_crypto_from_bundleShadowGenerator.sh
+?? scripts/fix_015_bundleShadowGenerator_execute_signalDetection_and_alias_keys.sh
+?? scripts/fix_015_complete_BrainTickerContext.sh
+?? scripts/fix_016_backfill_signalDetection_into_bundles.sh
+?? scripts/fix_017_metaFusionV2_define_safeSignals.sh
+?? scripts/fix_017_metaFusionV2_safeSignals.ts
+?? scripts/fix_017_metaFusionV2_signals_spread.sh
+?? scripts/fix_017_metaFusion_import_extension.sh
+?? scripts/fix_018_metaFusionV2_safeSignals_correct_placement.sh
+?? scripts/fix_018_metaFusion_runner_import.sh
+?? scripts/fix_019_metaFusionV2_correct_safeSignals_placement.sh
+?? scripts/fix_019_wire_metaFusion_into_opportunityScoring.sh
+?? scripts/fix_020_force_metaFusion_scoring_consumption.sh
+?? scripts/fix_021_force_metaFusion_scoring_consumption_safe.sh
+?? scripts/fix_021_force_metaFusion_scoring_consumption_safe_v2.sh
+?? scripts/fix_022_force_metaFusion_consumption_hard.sh
+?? scripts/fix_023_force_metaFusion_consumption_hard_fixed.sh
+?? scripts/fix_024_force_metaFusion_consumption_structural.sh
+?? scripts/fix_025_opportunityScoring_add_metaFusion_block.sh
+?? scripts/fix_026_metaFusion_scoring_NO_REGEX.sh
+?? scripts/fix_027_wire_metaFusion_scoring_string_safe.sh
+?? scripts/fix_028_force_metaFusion_consumption_structural.sh
+?? scripts/fix_029_force_metaFusion_consumption_by_structure.sh
+?? scripts/fix_030_run_price_history_ingestion.sh
+?? scripts/fix_031_priceHistory_model_correction.sh
+?? scripts/fix_032_priceHistory_skip_failures.sh
+?? scripts/fix_033_priceHistory_add_polygon_fallback.sh
+?? scripts/fix_034_priceHistory_hard_reset.sh
+?? scripts/fix_034b_priceHistory_hard_reset_safe.sh
+?? scripts/fix_034c_priceHistory_prisma_symbol_filter.sh
+?? scripts/fix_036_create_and_run_correlation_engine.sh
+?? scripts/fix_037_correct_correlation_import.sh
+?? scripts/fix_038_correlation_import_actual_file.sh
+?? scripts/fix_039_hard_replace_correlation_runner.sh
+?? scripts/fix_040_correlation_runner_import_and_export.sh
+?? scripts/fix_041_create_correlation_runner_v2.sh
+?? scripts/fix_042_disable_legacy_correlation_engine.sh
+?? scripts/fix_043_fix_correlation_v2_signal_shape.sh
+?? scripts/fix_add_health_route.sh
+?? scripts/fix_add_prisma_build_datasource.sh
+?? scripts/fix_disable_prisma_migrate_railway.sh
+?? scripts/fix_dockerfile_cmd_start.sh
+?? scripts/fix_dockerfile_expose_port.sh
+?? scripts/fix_dockerfile_from_order_prisma_env.sh
+?? scripts/fix_dockerfile_prisma_build_env.sh
+?? scripts/fix_dockerfile_prisma_config_copy.sh
+?? scripts/fix_dockerfile_prisma_root_config.sh
+?? scripts/fix_dockerfile_runtime_cmd.sh
+?? scripts/fix_force_railway_port_binding.sh
+?? scripts/fix_fred_cpi_module.sh
+?? scripts/fix_fred_cpi_signature.sh
+?? scripts/fix_fred_modules_status_contract.sh
+?? scripts/fix_fusion_engine_v1.sh
+?? scripts/fix_ingestion_logger_path.sh
+?? scripts/fix_ingestion_relative_imports.sh
+?? scripts/fix_phase3_correlation_hunter_json_typing.sh
+?? scripts/fix_phase3_correlation_hunter_prisma_import.sh
+?? scripts/fix_phase4_openai_provider_typing.sh
+?? scripts/fix_phase4_prisma_import.sh
+?? scripts/fix_phase4_providers_stub.sh
+?? scripts/fix_phase4_runAISynthesis_type.sh
+?? scripts/fix_phase4_runners_provider.sh
+?? scripts/fix_phase4_wire_template_literal.sh
+?? scripts/fix_prisma_downgrade_to_v6.sh
+?? scripts/fix_prisma_restore_datasource_v6.sh
+?? scripts/fix_prisma_v6_add_url.sh
+?? scripts/fix_prisma_v6_hard_reset.sh
+?? scripts/fix_prisma_v6_remove_adapter.sh
+?? scripts/fix_prisma_v7_add_datasource_config.sh
+?? scripts/fix_prisma_v7_generate_docker.sh
+?? scripts/fix_prisma_v7_move_config_to_root.sh
+?? scripts/fix_prisma_v7_set_config_path_docker.sh
+?? scripts/fix_railway_start_command.sh
+?? scripts/fix_railway_start_correct_path.sh
+?? scripts/fix_remove_fundamentals_from_registry.sh
+?? scripts/fix_remove_ts_path_aliases.sh
+?? scripts/fix_restore_prisma_models_and_generate.sh
+?? scripts/fix_restore_schema_from_backup.sh
+?? scripts/fix_score_band_units_phase3_phase4.sh
+?? scripts/fix_sec_enforcement_snapshot.sh
+?? scripts/fix_sec_enforcement_snapshot_v2.sh
+?? scripts/fix_server_port_railway.sh
+?? scripts/fix_server_ts_clean.sh
+?? scripts/fix_ts_build_errors.sh
+?? scripts/fix_ts_build_errors_v2.sh
+?? scripts/fix_ts_build_errors_v3.sh
+?? scripts/fix_ts_build_errors_v4.sh
+?? scripts/freeze_phase4.sh
+?? scripts/guards/
+?? scripts/implement_phase3_correlation_hunter_v1_logic.sh
+?? scripts/ingest-disable-all.sh
+?? scripts/ingest-known-good-only.sh
+?? scripts/ingest-known-good-plus-polygon.sh
+?? scripts/ingestion_001_lock_control_plane_option_a.sh
+?? scripts/ingestion_002_fix_route_mount.sh
+?? scripts/ingestion_003_fix_server_mount.sh
+?? scripts/ingestion_004_fix_server_async_bootstrap.sh
+?? scripts/ingestion_005_fix_server_liveness.sh
+?? scripts/ingestion_006_add_observability_v1.sh
+?? scripts/ingestion_010_enable_fmp_earnings.sh
+?? scripts/ingestion_011_fix_fmp_earnings_ts.sh
+?? scripts/ingestion_012_fix_logger_import.sh
+?? scripts/ingestion_020_enable_fmp_earnings_registry.sh
+?? scripts/ingestion_021_fix_earnings_result_shape.sh
+?? scripts/ingestion_030_enable_fmp_dividends.sh
+?? scripts/ingestion_031_enable_dividends_registry.sh
+?? scripts/ingestion_032_fix_dividend_registry_shape.sh
+?? scripts/ingestion_040_fix_earnings_dedupe.sh
+?? scripts/ingestion_041_fix_earnings_dedupe_pathfix.sh
+?? scripts/ingestion_041_fix_fmp_insider_transactions.sh
+?? scripts/ingestion_042_fix_earnings_dedupe_final.sh
+?? scripts/ingestion_042_fix_fmp_insider_endpoint.sh
+?? scripts/ingestion_042_fix_fmp_insider_transactions_ts.sh
+?? scripts/ingestion_043_fix_insider_ticker_dependency.sh
+?? scripts/ingestion_044_force_insider_insert.sh
+?? scripts/ingestion_050_prisma_dedupe_sweep.sh
+?? scripts/ingestion_051_prisma_dedupe_sweep_fixed.sh
+?? scripts/ingestion_052_prisma_dedupe_correct.sh
+?? scripts/ingestion_060_fix_dividend_endpoint.sh
+?? scripts/ingestion_070_disable_metadata_registry.sh
+?? scripts/ingestion_070_enable_sources_fmp_calendars_dedupe_logs.sh
+?? scripts/ingestion_070_switch_to_registry.sh
+?? scripts/ingestion_071_canonical_registry_pipeline.sh
+?? scripts/ingestion_071_fix_pipeline_static_registry.sh
+?? scripts/ingestion_072_fix_sp500_export.sh
+?? scripts/ingestion_072_restore_http_run_route.sh
+?? scripts/ingestion_073_fix_pipeline_executor.sh
+?? scripts/ingestion_073_rebuild_manifestFull.sh
+?? scripts/ingestion_074_disable_sp500_universe.sh
+?? scripts/ingestion_075_respect_registry_status.sh
+?? scripts/ingestion_080_stub_registry.ts.sh
+?? scripts/ingestion_081_exclude_tests.sh
+?? scripts/ingestion_082_fix_sp500_adapter.sh
+?? scripts/ingestion_083_fix_manifest_paths.sh
+?? scripts/ingestion_084_fix_manifest_and_stub_registry.sh
+?? scripts/ingestion_085_fix_manifest_remove_fmpFundamentals.sh
+?? scripts/ingestion_086_enable_fmpKeyMetrics.sh
+?? scripts/ingestion_087_enable_fmpMacro.sh
+?? scripts/ingestion_088_enable_fmpNews.sh
+?? scripts/ingestion_090_run_all_verified_sources.sh
+?? scripts/ingestion_091_guard_manifest_vs_registry.sh
+?? scripts/ingestion_092_fix_guard_manifest_parser.sh
+?? scripts/ingestion_093_guard_manifest_vs_registry_node.sh
+?? scripts/ingestion_094_guard_manifest_vs_registry_runtime.sh
+?? scripts/ingestion_095_guard_manifest_vs_registry_runtime.sh
+?? scripts/ingestion_096_fix_registry_add_fmp_dividend_calendar.sh
+?? scripts/ingestion_097_fix_registry_correct_fmp_dividend_calendar.sh
+?? scripts/ingestion_098_guard_manifest_vs_registry_runtime_fixed.sh
+?? scripts/ingestion_1000_dedupe_ofac_entities_manifest.sh
+?? scripts/ingestion_1000_fix_polygon_ticker_details.sh
+?? scripts/ingestion_1001_fix_polygon_ticker_details_safe.sh
+?? scripts/ingestion_1002_fix_polygon_ticker_details_symbol_filter.sh
+?? scripts/ingestion_1003_make_ingestion_never_crash.sh
+?? scripts/ingestion_1004_fix_wrap_signature_correctly.sh
+?? scripts/ingestion_1005_fix_wrap_errors_field.sh
+?? scripts/ingestion_100_enable_fmpInstitutionalOwnership.sh
+?? scripts/ingestion_1010_fix_ofac_sdn_entities_writer.sh
+?? scripts/ingestion_1010_fix_polygon_ticker_news_guard.sh
+?? scripts/ingestion_1011_fix_polygon_ticker_news_types.sh
+?? scripts/ingestion_1012_fix_polygon_news_schema_mismatch.sh
+?? scripts/ingestion_101_enable_fmpInsiderRoster.sh
+?? scripts/ingestion_1020_debug_ofac_entity_writer.sh
+?? scripts/ingestion_102_enable_fmpIPOCalendar.sh
+?? scripts/ingestion_103_enable_fmpEconomicCalendar.sh
+?? scripts/ingestion_104_enable_fmpGovernmentContracts.sh
+?? scripts/ingestion_1100_add_treasury_auctions_and_disable_all.sh
+?? scripts/ingestion_1101_enforce_disable_all_guard.sh
+?? scripts/ingestion_1102_fix_pipeline_disable_all_ctx_safe.sh
+?? scripts/ingestion_1103_run_pipeline_with_ctx.sh
+?? scripts/ingestion_110_run_all_enabled_sources.sh
+?? scripts/ingestion_111_run_all_enabled_sources_safe.sh
+?? scripts/ingestion_1200_add_treasury_auction_snapshot.sh
+?? scripts/ingestion_1201_run_treasury_auction_snapshot.sh
+?? scripts/ingestion_1202_add_treasury_auction_snapshot.sh
+?? scripts/ingestion_1203_register_treasury_auction_snapshot.sh
+?? scripts/ingestion_1204_fix_register_treasury_snapshot.sh
+?? scripts/ingestion_120_curl_check_fmpFundamentals.sh
+?? scripts/ingestion_121_enable_fmpFundamentals.sh
+?? scripts/ingestion_122_enable_fmpKeyMetrics.sh
+?? scripts/ingestion_123_enable_fmpEarningsCalendar.sh
+?? scripts/ingestion_124_enable_fmpInsiderTransactionsExtended.sh
+?? scripts/ingestion_125_enable_fmpInstitutionalOwnership.sh
+?? scripts/ingestion_125a_debug_fmpInstitutionalOwnership.sh
+?? scripts/ingestion_125b_find_institutional_module.sh
+?? scripts/ingestion_126_create_fmpInstitutionalOwnership_module.sh
+?? scripts/ingestion_127_enable_fmpInstitutionalOwnership.sh
+?? scripts/ingestion_128_fix_fmpInstitutionalOwnership_module.sh
+?? scripts/ingestion_129_fix_fmpInstitutionalOwnership_esm_extensions.sh
+?? scripts/ingestion_130_fix_fmpInstitutionalOwnership_return_shape.sh
+?? scripts/ingestion_131_fix_fmpInstitutionalOwnership_status_enum.sh
+?? scripts/ingestion_132_fix_fmpInstitutionalOwnership_literal_types.sh
+?? scripts/ingestion_133_fix_manifest_institutional_duplicates.sh
+?? scripts/ingestion_134_enable_fmpGovernmentContracts.sh
+?? scripts/ingestion_135_create_fmpGovernmentContracts_module.sh
+?? scripts/ingestion_136_enable_fmpGovernmentContracts.sh
+?? scripts/ingestion_150_create_usaspending_government_contracts_module.sh
+?? scripts/ingestion_151_enable_usaspending_government_contracts.sh
+?? scripts/ingestion_152_force_fix_manifest_usaspending.sh
+?? scripts/ingestion_153_fix_usaspending_awardId.sh
+?? scripts/ingestion_154_fix_usaspending_schema_alignment.sh
+?? scripts/ingestion_160_create_usaspending_award_detail_enrichment.sh
+?? scripts/ingestion_160_extend_usaspending_pagination.sh
+?? scripts/ingestion_161_enable_usaspending_award_detail_enrichment.sh
+?? scripts/ingestion_161_guard_usaspending_symbol_mapping.sh
+?? scripts/ingestion_170_create_usaspending_symbol_mapping.sh
+?? scripts/ingestion_170_usaspending_add_pagination_full.sh
+?? scripts/ingestion_171_enable_usaspending_symbol_mapping.sh
+?? scripts/ingestion_171_fix_usaspending_literal_status.sh
+?? scripts/ingestion_172_fix_usaspending_symbol_mapping_name_field.sh
+?? scripts/ingestion_200_create_polygonTickerDetails.sh
+?? scripts/ingestion_201_enable_polygonTickerDetails.sh
+?? scripts/ingestion_202_fix_polygonTickerDetails_syntax.sh
+?? scripts/ingestion_203_force_fix_manifest_polygon.sh
+?? scripts/ingestion_204_normalize_manifest_full.sh
+?? scripts/ingestion_210_create_polygonTickerNews.sh
+?? scripts/ingestion_211_enable_polygonTickerNews.sh
+?? scripts/ingestion_212_fix_polygonTickerNews_upsert.sh
+?? scripts/ingestion_213_fix_polygonTickerNews_ticker_relation.sh
+?? scripts/ingestion_214_fix_polygonTickerNews_remove_source.sh
+?? scripts/ingestion_215_fix_polygonTickerNews_schema_correct.sh
+?? scripts/ingestion_216_fix_polygonDailyOHLC_schema_correct.sh
+?? scripts/ingestion_217_fix_polygonDailyOHLC_no_templates.sh
+?? scripts/ingestion_220_create_polygonDailyOHLC.sh
+?? scripts/ingestion_221_enable_polygonDailyOHLC.sh
+?? scripts/ingestion_401_create_quiverCongressTrades_module.sh
+?? scripts/ingestion_410_add_political_trade_schema.sh
+?? scripts/ingestion_411_fix_political_trade_backrelation.sh
+?? scripts/ingestion_412_write_quiverCongressTrades_module.sh
+?? scripts/ingestion_413_enable_quiverCongressTrades.sh
+?? scripts/ingestion_414_fix_quiver_prisma_import.sh
+?? scripts/ingestion_415_force_add_quiver_manifest.sh
+?? scripts/ingestion_416_fix_quiver_trade_id.sh
+?? scripts/ingestion_417_fix_quiver_remove_tickerSymbol.sh
+?? scripts/ingestion_418_fix_quiver_remove_tradeDate.sh
+?? scripts/ingestion_419_fix_quiver_required_fields.sh
+?? scripts/ingestion_420_enable_quiver_execution.sh
+?? scripts/ingestion_430_create_secForm4_module.sh
+?? scripts/ingestion_431_enable_secForm4.sh
+?? scripts/ingestion_440_create_redditSentiment_module.sh
+?? scripts/ingestion_441_enable_redditSentiment.sh
+?? scripts/ingestion_450_fix_literal_returns_sec_reddit.sh
+?? scripts/ingestion_500_add_sentiment_post_schema.sh
+?? scripts/ingestion_500_disable_polygon_sources.sh
+?? scripts/ingestion_501_create_google_trends_module.sh
+?? scripts/ingestion_501_fix_prisma_nodenext_bridge.sh
+?? scripts/ingestion_502_enable_google_trends.sh
+?? scripts/ingestion_502_fix_ts_decl_for_prisma_js_bridge.sh
+?? scripts/ingestion_503_fix_google_trends_types.sh
+?? scripts/ingestion_503_fix_redditSentiment_use_ctx_prisma.sh
+?? scripts/ingestion_504_fix_redditSentiment_literal_status.sh
+?? scripts/ingestion_505_add_sentiment_event_model.sh
+?? scripts/ingestion_510_wire_reddit_sentiment.sh
+?? scripts/ingestion_520_fix_sec_form4.sh
+?? scripts/ingestion_521_create_sec13fHoldings_module.sh
+?? scripts/ingestion_522_enable_sec13fHoldings.sh
+?? scripts/ingestion_523_fix_sec13fHoldings_template.sh
+?? scripts/ingestion_524_fix_manifest_import_sec13f.sh
+?? scripts/ingestion_540_fix_quiverCongressTrades.sh
+?? scripts/ingestion_541_fix_quiver_status_literals.sh
+?? scripts/ingestion_542_fix_quiver_no_template_literals.sh
+?? scripts/ingestion_550_fix_quiver_endpoint_and_headers.sh
+?? scripts/ingestion_551_fix_quiver_status_literal.sh
+?? scripts/ingestion_552_fix_quiver_export_run.sh
+?? scripts/ingestion_560_add_raw_to_political_trade.sh
+?? scripts/ingestion_570_backfill_political_trade_tickerId.sh
+?? scripts/ingestion_571_add_political_trade_indexes.sh
+?? scripts/ingestion_601_enable_crypto_equity_correlation.sh
+?? scripts/ingestion_602_fix_crypto_equity_correlation_prisma.sh
+?? scripts/ingestion_701_add_fed_speeches.sh
+?? scripts/ingestion_703_add_fed_speeches_manifest.sh
+?? scripts/ingestion_704_repair_manifest_and_register_fed_speeches.sh
+?? scripts/ingestion_705_add_fed_speeches_import.sh
+?? scripts/ingestion_705_fix_fed_speeches_invalid_date.sh
+?? scripts/ingestion_706_normalize_fed_speeches_raw.sh
+?? scripts/ingestion_710_write_crypto_equity_corr_btc_tsla_t1.sh
+?? scripts/ingestion_799_repair_manifest_and_registry.sh
+?? scripts/ingestion_800_fix_registry_stub_compile.sh
+?? scripts/ingestion_801_add_crypto_equity_corr_btc_tsla.sh
+?? scripts/ingestion_801_fix_registry_diagnostics_stub.sh
+?? scripts/ingestion_810_write_fed_speeches_module.sh
+?? scripts/ingestion_820_fed_speeches_all_in.sh
+?? scripts/ingestion_821_repair_manifest_remove_bad_entry.sh
+?? scripts/ingestion_822_add_fed_speeches_manifest_safe.sh
+?? scripts/ingestion_900_add_crypto_equity_corr_btc_tsla.sh
+?? scripts/ingestion_900_enable_all_sources_phase1_fmp_core.sh
+?? scripts/ingestion_901_fix_manifest_export_and_pipeline_types.sh
+?? scripts/ingestion_901_fix_prisma_unique_corruption.sh
+?? scripts/ingestion_902_hard_restore_manifest_and_pipeline.sh
+?? scripts/ingestion_904_restore_manifest_full_from_backup.sh
+?? scripts/ingestion_910_enable_fmp_market_sources.sh
+?? scripts/ingestion_910_fix_crypto_equity_correlation_write.sh
+?? scripts/ingestion_910_fix_fmp_insider_trades.sh
+?? scripts/ingestion_910_register_crypto_equity_correlation.sh
+?? scripts/ingestion_911_repair_manifest_crypto_equity_corr.sh
+?? scripts/ingestion_912_force_insert_crypto_equity_corr_first.sh
+?? scripts/ingestion_920_expand_crypto_equity_corr_targets.sh
+?? scripts/ingestion_920_extend_crypto_equity_corr_eth.sh
+?? scripts/ingestion_920_fix_prisma_duplicate_models_gov.sh
+?? scripts/ingestion_921_fix_crypto_corr_returns_typing.sh
+?? scripts/ingestion_921_verify_gov_tables.sh
+?? scripts/ingestion_922_fix_insider_transactions_writer.sh
+?? scripts/ingestion_922_replace_crypto_equity_corr_module.sh
+?? scripts/ingestion_923_fix_crypto_corr_return_contract.sh
+?? scripts/ingestion_924_fix_crypto_corr_full_return_contract.sh
+?? scripts/ingestion_924_fix_crypto_corr_status_literal.sh
+?? scripts/ingestion_925_fix_crypto_corr_function_signature.sh
+?? scripts/ingestion_926_hard_replace_crypto_equity_correlation.sh
+?? scripts/ingestion_930_add_sec_enforcement_litigation.sh
+?? scripts/ingestion_930_restore_crypto_corr_logic.sh
+?? scripts/ingestion_931_fix_sec_press_and_run.sh
+?? scripts/ingestion_940_add_ofac_sanctions.sh
+?? scripts/ingestion_941_quarantine_sec_press_releases.sh
+?? scripts/ingestion_942_add_and_register_ofac_sanctions.sh
+?? scripts/ingestion_943_fix_ofac_regex_literals.sh
+?? scripts/ingestion_944_register_ofac_sanctions.sh
+?? scripts/ingestion_945_fix_ofac_sanctions_csv.sh
+?? scripts/ingestion_946_validate_ofac_source.sh
+?? scripts/ingestion_947_fix_ofac_csv_ingestion.sh
+?? scripts/ingestion_950_verify_ofac_ingestion.sh
+?? scripts/ingestion_951_inspect_ingestion_schema.sh
+?? scripts/ingestion_952_find_ofac_rows.sh
+?? scripts/ingestion_960_add_ofac_sdn_csv_ingestion.sh
+?? scripts/ingestion_960_fix_and_ingest_ofac_sdn.sh
+?? scripts/ingestion_960_fix_ofac_sanctions_csv_and_verify.sh
+?? scripts/ingestion_960_fix_ofac_sdn_csv.sh
+?? scripts/ingestion_961_verify_ofac_sdn_rows.sh
+?? scripts/ingestion_970_fix_ofac_csv_ingestion.sh
+?? scripts/ingestion_971_fix_ofac_sdn_types_and_fetch.sh
+?? scripts/ingestion_972_inspect_ofac_csv_locally.sh
+?? scripts/ingestion_980_add_doj_antitrust_press.sh
+?? scripts/ingestion_980_fix_and_ingest_ofac_sdn.sh
+?? scripts/ingestion_981_fix_doj_antitrust_press_regex.sh
+?? scripts/ingestion_981_fix_ofac_missing_id.sh
+?? scripts/ingestion_982_force_replace_doj_antitrust_press.sh
+?? scripts/ingestion_983_register_and_run_doj_antitrust_press.sh
+?? scripts/ingestion_984_fix_doj_not_registered.sh
+?? scripts/ingestion_985_fix_verify_ingestionrun_lookup.sh
+?? scripts/ingestion_990_add_ofac_sdn_entities.sh
+?? scripts/ingestion_990_finalize_ofac_snapshot_only.sh
+?? scripts/ingestion_991_fix_ofac_sdn_entities_fetch.sh
+?? scripts/ingestion_991_force_ofac_entity_write.sh
+?? scripts/ingestion_992_fix_ofac_entities_category.sh
+?? scripts/ingestion_992_register_ofac_entities.sh
+?? scripts/ingestion_993_add_ofac_entity_writer.sh
+?? scripts/ingestion_999_fix_ofac_entities_end_to_end.sh
+?? scripts/ingestion_FIX_treasury_auction_snapshot.sh
+?? scripts/ingestion_diff_report.ts
+?? scripts/ingestion_fix_register_and_run_treasury_auction_snapshot.sh
+?? scripts/ingestion_fix_register_fed_speeches.sh
+?? scripts/ingestion_snapshot.ts
+?? scripts/ingestion_table_map.ts
+?? scripts/inspect_signal_pipeline_phase3.sh
+?? scripts/inspect_tier1_tier2_sources.sh
+?? scripts/join-sector-to-assets.ts
+?? scripts/live_run_tier1_tier2_direct.sh
+?? scripts/live_run_tier1_tier2_v3.sh
+?? scripts/live_run_tier1_tier2_v4.sh
+?? scripts/live_run_tier1_tier2_v5.sh
+?? scripts/lock-federal-register.sh
+?? scripts/lock_and_run_sec_enforcement_snapshot.sh
+?? scripts/lock_phase3_catalyst_hunter_drift.sh
+?? scripts/lock_phase3_correlation_hunter_drift.sh
+?? scripts/lock_phase3_correlation_hunter_logic.sh
+?? scripts/lock_phase3_engine_signals_drift.sh
+?? scripts/map-agency-sectors.ts
+?? scripts/mount_brain_autopilot_route.js
+?? scripts/normalize-fd-agencies.ts
+?? scripts/normalize_fusion_weights_v1.sh
+?? scripts/patch-crypto-ohlc-backfill.sh
+?? scripts/patch-fred-housing-api.sh
+?? scripts/patch-fred-housing-return.sh
+?? scripts/patch-fred-housing-upsert.sh
+?? scripts/patch-hard-ingestion-gating.sh
+?? scripts/patch-ingest-allowlist.sh
+?? scripts/patch-ingestion-gating-final.sh
+?? scripts/patch-ingestion-gating-v2.sh
+?? scripts/patch-ingestion-hard-filter.sh
+?? scripts/patch-ingestion-skip-hard.sh
+?? scripts/patch-manifest-add-crypto-ohlc.sh
+?? scripts/patch-reddit-json-guard.sh
+?? scripts/patch-usaspending-award-detail-safe.sh
+?? scripts/patch_adapters_tier1_tier2_enable_live.sh
+?? scripts/patch_adapters_tier1_tier2_fix_ctx.sh
+?? scripts/patch_adapters_tier1_tier2_fix_types.sh
+?? scripts/patch_add_ai_sweep_first_rule.sh
+?? scripts/patch_add_ai_sweep_rule.sh
+?? scripts/patch_add_ai_sweep_rule_v2.sh
+?? scripts/patch_add_c_dropin_standard.sh
+?? scripts/patch_add_docs_location_rule.sh
+?? scripts/patch_add_new_chat_bootstrap.sh
+?? scripts/patch_correlation_band_percentile_v1.sh
+?? scripts/patch_enable_live_tier1_tier2.sh
+?? scripts/patch_enable_metrics_category.sh
+?? scripts/patch_enable_metrics_category_v2.sh
+?? scripts/patch_fmpKeyMetrics_fix_name.sh
+?? scripts/patch_fmpKeyMetrics_safe_write.sh
+?? scripts/patch_fmpKeyMetrics_upsert.sh
+?? scripts/patch_fmpKeyMetrics_use_ingest_date.sh
+?? scripts/patch_fusion_skip_constant_engines.sh
+?? scripts/patch_phase4_ai_contract_fix.sh
+?? scripts/patch_phase4_ai_diagnostic_v1.sh
+?? scripts/patch_phase4_ai_diagnostic_v2.sh
+?? scripts/patch_phase4_ai_diagnostic_v3.sh
+?? scripts/patch_phase4_ai_final.sh
+?? scripts/patch_phase4_ai_final_v2.sh
+?? scripts/patch_phase4_ai_final_v3.sh
+?? scripts/patch_phase4_ai_runner_imports.sh
+?? scripts/patch_phase4_ai_sweep_v1.sh
+?? scripts/patch_phase4_ai_sweep_v2.sh
+?? scripts/patch_phase4_ai_v4.sh
+?? scripts/patch_phase4_ai_v5.sh
+?? scripts/patch_phase4_ai_v6.sh
+?? scripts/patch_phase4_entropy_gate.sh
+?? scripts/patch_phase4_persist_synthesis.sh
+?? scripts/patch_phase4_persist_synthesis_safe.sh
+?? scripts/patch_phase5_esm_imports.sh
+?? scripts/patch_phase6_decay_dry_run.sh
+?? scripts/patch_phase6_engine_confidence_dry_run.sh
+?? scripts/patch_phase6_engine_confidence_dry_run_v2.sh
+?? scripts/patch_phase6_rolling_windows_dry_run.sh
+?? scripts/patch_schema.js
+?? scripts/probe_fmp_key_metrics_raw.sh
+?? scripts/rebuild-federal-register-agencies.ts
+?? scripts/rebuild-federal-register.ts
+?? scripts/register-bea-pce.sh
+?? scripts/register-bls-cpi.sh
+?? scripts/register-bls-nfp.sh
+?? scripts/register-cftc.sh
+?? scripts/register-crypto-core-ohlc.sh
+?? scripts/register-crypto-core.sh
+?? scripts/register-crypto-fear-greed.sh
+?? scripts/register-crypto-weekend-spike.sh
+?? scripts/register-fed-funds-safe.sh
+?? scripts/register-fed-funds-static.sh
+?? scripts/register-fed-funds.sh
+?? scripts/register-ingestion-module.sh
+?? scripts/register_and_test_fred_cpi.sh
+?? scripts/registry/
+?? scripts/repair-manifest-with-tariffs.sh
+?? scripts/repair-manifestFull-with-polygon.sh
+?? scripts/repair-manifestFull.sh
+?? scripts/replace-runIngestionPipeline-with-gating.sh
+?? scripts/replace_phase4_runAISynthesis.sh
+?? scripts/reset-crypto-ohlc.sh
+?? scripts/restore-fed-commentary-real.sh
+?? scripts/restore-manifestFull.sh
+?? scripts/restore-runIngestionPipeline.sh
+?? scripts/restore-tariff-trade-events-real.sh
+?? scripts/restore-trump-truth-social-real.sh
+?? scripts/restore_manifest_full.sh
+?? scripts/rollback/
+?? scripts/run_ai_synthesis_once_write.sh
+?? scripts/run_brain_dry_run_once.sh
+?? scripts/run_brain_force_once.sh
+?? scripts/run_brain_live_once.sh
+?? scripts/run_control_plane_module.sh
+?? scripts/run_direct_template.sh
+?? scripts/run_ingest_one.sh
+?? scripts/run_module_pipeline_live.sh
+?? scripts/run_ofac_sdn_entities.sh
+?? scripts/run_one_ingestion.js
+?? scripts/run_phase4_ai_synthesis_openai_once.sh
+?? scripts/run_polygon_daily_ohlc.sh
+?? scripts/run_treasury_auction_snapshot.sh
+?? scripts/run_treasury_auction_snapshot_direct.sh
+?? scripts/scaffold_phase5_meta_learning_v1.sh
+?? scripts/scaffold_phase6_attribution_dry_run.sh
+?? scripts/scan_all_md_inventory.sh
+?? scripts/scan_canonical_md_paths.sh
+?? scripts/scan_find_canonical_md.sh
+?? scripts/scan_phase4_ai_sweep_files.sh
+?? scripts/show-macrodatum-category.mjs
+?? scripts/signal_001_add_signalDetection_runner.sh
+?? scripts/signal_002_fix_signalDetection_runner.sh
+?? scripts/signal_003_add_required_signal_id.sh
+?? scripts/signal_004_wire_price_history.sh
+?? scripts/snapshot_ai_canonical_md.sh
+?? scripts/snapshot_full_project_tree.sh
+?? scripts/source_001_test_political_trades.sh
+?? scripts/source_010_test_quiver_congress.sh
+?? scripts/source_520_test_sec_13f.sh
+?? scripts/start-ingest-only.sh
+?? scripts/test-tradier-options.sh
+?? scripts/update_ai_drift_boundaries_phase3.sh
+?? scripts/v2_add_confidence_calibration.sh
+?? scripts/v2_add_decision_boundary_helper.sh
+?? scripts/v2_add_negative_evidence_completeness.sh
+?? scripts/v2_add_operator_readiness.sh
+?? scripts/v2_add_parity_logger_usage.sh
+?? scripts/v2_add_signalDetection_named_import.sh
+?? scripts/v2_add_silence_taxonomy.sh
+?? scripts/v2_add_whatif_descriptor.sh
+?? scripts/v2_catalyst_upgrade_batch2_apply.sh
+?? scripts/v2_cleanup_batch5_duplicates_FINAL.sh
+?? scripts/v2_correlation_upgrade_batch2_apply.sh
+?? scripts/v2_create_catalyst_engine.sh
+?? scripts/v2_create_catalyst_types.sh
+?? scripts/v2_create_correlation_engine.sh
+?? scripts/v2_create_correlation_types.sh
+?? scripts/v2_create_metaFusion_engine.sh
+?? scripts/v2_create_metaFusion_types.sh
+?? scripts/v2_create_regimeFusion_engine.sh
+?? scripts/v2_create_regimeFusion_types.sh
+?? scripts/v2_create_regimeSynthesis_engine.sh
+?? scripts/v2_create_regimeSynthesis_types.sh
+?? scripts/v2_create_signalDetection_engine.sh
+?? scripts/v2_create_signalDetection_schema.sh
+?? scripts/v2_fix_batch5_invalid_inserts.sh
+?? scripts/v2_fix_batch5_wiring_correct.sh
+?? scripts/v2_fix_temporalBaseline_schema_safe.sh
+?? scripts/v2_insert_signalDetection_import_FINAL.sh
+?? scripts/v2_metafusion_batch2_helpers.sh
+?? scripts/v2_remove_batch5_envelope_props_FINAL.sh
+?? scripts/v2_remove_invalid_signalDetection_default_import.sh
+?? scripts/v2_remove_stray_signalDetection_identifier.sh
+?? scripts/v2_signalDetection_upgrade_batch4_apply.sh
+?? scripts/v2_wire_batch5_into_engine.sh
+?? scripts/v2_wire_signalDetection_shadow.sh
+?? scripts/verify/
+?? scripts/verify_ingestion_actual_writes.ts
+?? scripts/verify_ingestion_data_exists.ts
+?? scripts/verify_ingestion_freshness.ts
+?? scripts/verify_ingestion_sources.ts
+?? scripts/verify_sources.cstyle.sh
+?? scripts/wire_phase3_correlation_to_phase4_synthesis.sh
+?? src/api/
+?? src/brain/_generated/
+?? src/brain/autopilot/
+?? src/brain/contracts/
+?? src/brain/core/brainExecutionPlan.ts
+?? src/brain/core/index.ts
+?? src/brain/db/
+?? src/brain/engines/aiCostGuardrails/
+?? src/brain/engines/aiGovernance/
+?? src/brain/engines/autoUpgradePlanner/
+?? src/brain/engines/autoUpgradePrompter/
+?? src/brain/engines/bundleCompression/
+?? src/brain/engines/catalystHunter/
+?? src/brain/engines/confidenceCalibration/
+?? src/brain/engines/confidenceDecay/
+?? src/brain/engines/contradiction/
+?? src/brain/engines/correlationHunter/
+?? src/brain/engines/engineAttribution/
+?? src/brain/engines/engineEvaluation/
+?? src/brain/engines/engineWeightAdjuster/
+?? src/brain/engines/experimentRunner/
+?? src/brain/engines/explanationNarrative/
+?? src/brain/engines/index.ts
+?? src/brain/engines/insiderActivity/
+?? src/brain/engines/macroShock/
+?? src/brain/engines/metaFusion/
+?? src/brain/engines/metaLearningScheduler/
+?? src/brain/engines/newsVelocity/
+?? src/brain/engines/opportunityBacktest/
+?? src/brain/engines/opportunityLifecycle/
+?? src/brain/engines/opportunityNarrative/
+?? src/brain/engines/opportunityOutcome/
+?? src/brain/engines/opportunityPromotion/
+?? src/brain/engines/opportunityScoring/
+?? src/brain/engines/opportunitySynthesis/
+?? src/brain/engines/optionsFlow/
+?? src/brain/engines/regimeFusion/
+?? src/brain/engines/regimeSynthesis/
+?? src/brain/engines/selfEvaluation/
+?? src/brain/engines/selfImprovementController/
+?? src/brain/engines/signalDetection/
+?? src/brain/ensemble/
+?? src/brain/fusion/index.ts
+?? src/brain/meta/evaluators.ts
+?? src/brain/meta/index.ts
+?? src/brain/meta/metaBrain.ts
+?? src/brain/opportunities/
+?? src/brain/runners/
+?? src/brain/utils/
+?? src/brain/vendorProxy/
+?? src/config/index.ts
+?? src/controllers/index.ts
+?? src/cron/index.ts
+?? src/db/index.ts
+?? src/diagnostics/
+?? src/ingestion/adapters/
+?? src/ingestion/control/
+?? src/ingestion/fmpDividendCalendar.ts
+?? src/ingestion/fmpEarningsCalendar.ts
+?? src/ingestion/fmpGovernmentContracts.ts
+?? src/ingestion/fmpInsiderTransactions.ts
+?? src/ingestion/index.ts
+?? src/ingestion/manifestFull.ts.DISABLED
+?? src/ingestion/manifestFull.ts.bak.1766387950
+?? src/ingestion/manifestFull.ts.bak.1766388053
+?? src/ingestion/manifestFull.ts.bak.1766388182
+?? src/ingestion/manifestFull.ts.bak.1766388659
+?? src/ingestion/manifestFull.ts.bak.1766388829
+?? src/ingestion/manifestFull.ts.bak.1766389497
+?? src/ingestion/manifestFull.ts.bak.1766390148
+?? src/ingestion/manifestFull.ts.bak.1766390217
+?? src/ingestion/manifestFull.ts.bak.1766390294
+?? src/ingestion/manifestFull.ts.bak.1766390328
+?? src/ingestion/manifestFull.ts.bak.1766390399
+?? src/ingestion/manifestFull.ts.bak.1766390482
+?? src/ingestion/manifestFull.ts.bak.1766390655
+?? src/ingestion/manifestFull.ts.bak.1766390741
+?? src/ingestion/manifestFull.ts.bak.1766390788
+?? src/ingestion/manifestFull.ts.bak.1766390829
+?? src/ingestion/manifestFull.ts.bak.1766418413
+?? src/ingestion/manifestFull.ts.pre_restore.20251221_154035
+?? src/ingestion/modules/analysis/
+?? src/ingestion/modules/bea-pce.ts
+?? src/ingestion/modules/bls-cpi.ts
+?? src/ingestion/modules/bls-initial-jobless-claims.ts
+?? src/ingestion/modules/bls-nfp.ts
+?? src/ingestion/modules/build-energy-asset-pressure.ts
+?? src/ingestion/modules/build-energy-pressure.ts
+?? src/ingestion/modules/build-natgas-pressure.ts
+?? src/ingestion/modules/build-unified-fd.ts
+?? src/ingestion/modules/bundles/
+?? src/ingestion/modules/cftcCOT.ts
+?? src/ingestion/modules/congress-stock-trading.ts
+?? src/ingestion/modules/corporate/
+?? src/ingestion/modules/credit-spreads.ts
+?? src/ingestion/modules/crypto-core-ohlc.ts
+?? src/ingestion/modules/crypto-equity-corr-btc-tsla.ts
+?? src/ingestion/modules/crypto-equity-correlation.ts
+?? src/ingestion/modules/cryptoEquityCorrelation.ts
+?? src/ingestion/modules/cryptoEtfFlows.ts
+?? src/ingestion/modules/cryptoExchangeNetflow.ts
+?? src/ingestion/modules/cryptoFearGreed.ts
+?? src/ingestion/modules/cryptoLiquidations.ts
+?? src/ingestion/modules/cryptoOHLC.ts
+?? src/ingestion/modules/cryptoWeekendSpike.ts
+?? src/ingestion/modules/cryptoWeekendToEquityLead.ts
+?? src/ingestion/modules/doj-antitrust-press.ts
+?? src/ingestion/modules/doj-antitrust-press.ts.bak.1766390198
+?? src/ingestion/modules/doj-antitrust-press.ts.bak.1766390262
+?? src/ingestion/modules/eia-spot-natgas.ts
+?? src/ingestion/modules/eia-spot-prices.ts
+?? src/ingestion/modules/fed-balance-sheet.ts
+?? src/ingestion/modules/fed-commentary-timeline.ts
+?? src/ingestion/modules/fed-financial-conditions.ts
+?? src/ingestion/modules/fed-speeches.ts
+?? src/ingestion/modules/fedFundsRate.ts
+?? src/ingestion/modules/fmpGovernmentContracts.ts
+?? src/ingestion/modules/fmpInstitutionalOwnership.ts
+?? src/ingestion/modules/fred-initial-jobless-claims.ts
+?? src/ingestion/modules/fred-treasury-yield-curve.ts
+?? src/ingestion/modules/fredCpi.ts
+?? src/ingestion/modules/fredHousing.ts
+?? src/ingestion/modules/fredUnemploymentRate.ts
+?? src/ingestion/modules/gdelt-global-headlines.ts
+?? src/ingestion/modules/googleTrends.ts
+?? src/ingestion/modules/government/
+?? src/ingestion/modules/imf-wb-policy.ts
+?? src/ingestion/modules/institutional/
+?? src/ingestion/modules/lifecycle/
+?? src/ingestion/modules/macro/fmpEconomicCalendar.ts
+?? src/ingestion/modules/metrics/
+?? src/ingestion/modules/ofac-sanctions.ts
+?? src/ingestion/modules/ofac-sanctions.ts.bak.1766388086
+?? src/ingestion/modules/ofac-sanctions.ts.bak.1766388260
+?? src/ingestion/modules/ofac-sanctions.ts.bak.1766388392
+?? src/ingestion/modules/ofac-sanctions.ts.bak.1766390059
+?? src/ingestion/modules/ofac-sanctions.ts.bak.1766390234
+?? src/ingestion/modules/ofac-sdn-csv.ts
+?? src/ingestion/modules/ofac-sdn-entities.ts
+?? src/ingestion/modules/ofac-sdn-entities.ts.bak.1766390446
+?? src/ingestion/modules/ofac-sdn-entities.ts.bak.1766390898
+?? src/ingestion/modules/ofac-sdn.ts
+?? src/ingestion/modules/ofac-sdn.ts.bak.1766389336
+?? src/ingestion/modules/ofac-sdn.ts.bak.1766389368
+?? src/ingestion/modules/ofac-sdn.ts.bak.1766389569
+?? src/ingestion/modules/opportunities/
+?? src/ingestion/modules/opportunity/
+?? src/ingestion/modules/options/
+?? src/ingestion/modules/optionsFlow.ts
+?? src/ingestion/modules/political/
+?? src/ingestion/modules/polygonDailyOHLC.ts
+?? src/ingestion/modules/polygonTickerDetails.ts
+?? src/ingestion/modules/polygonTickerDetails.ts.bak.1766404768
+?? src/ingestion/modules/polygonTickerDetails.ts.bak.1766404812
+?? src/ingestion/modules/polygonTickerDetails.ts.bak.1766404856
+?? src/ingestion/modules/polygonTickerNews.ts
+?? src/ingestion/modules/polygonTickerNews.ts.bak.1766418135
+?? src/ingestion/modules/polygonTickerNews.ts.bak.1766418181
+?? src/ingestion/modules/polygonTickerNews.ts.bak.1766418302
+?? src/ingestion/modules/quiverCongressTrades.ts
+?? src/ingestion/modules/redditSentiment.ts
+?? src/ingestion/modules/sec-enforcement-snapshot.ts
+?? src/ingestion/modules/sec-press-releases.ts
+?? src/ingestion/modules/sec-press-releases.ts.bak.1766387986
+?? src/ingestion/modules/sec13fHoldings.ts
+?? src/ingestion/modules/secCompanyFacts.ts
+?? src/ingestion/modules/secForm4.ts
+?? src/ingestion/modules/tariff-trade-events.ts
+?? src/ingestion/modules/test-control-plane.ts
+?? src/ingestion/modules/treasury-auction-snapshot.ts
+?? src/ingestion/modules/treasury-auctions.ts
+?? src/ingestion/modules/treasury-yield-curve.ts
+?? src/ingestion/modules/trump-truth-social.ts
+?? src/ingestion/modules/usaspendingAwardDetailEnrichment.ts
+?? src/ingestion/modules/usaspendingGovernmentContracts.ts
+?? src/ingestion/modules/usaspendingSymbolMapping.ts
+?? src/ingestion/pipelines/runIngestionPipeline.ts
+?? src/ingestion/pipelines/runIngestionPipeline.ts.bak.1766418548
+?? src/ingestion/pipelines/runIngestionPipeline.ts.bak.1766418586
+?? src/ingestion/pipelines/runIngestionPipeline.ts.ctxfix.20251220_175554
+?? src/ingestion/pipelines/runIngestionPipeline.ts.gated.20251220_175432
+?? src/ingestion/pipelines/runIngestionPipeline.ts.gated.20251220_185017
+?? src/ingestion/pipelines/runIngestionPipeline.ts.restore.20251220_175415
+?? src/ingestion/registry.ts
+?? src/ingestion/registry.ts.DISABLED
+?? src/ingestion/runIngestionDryRun.ts
+?? src/ingestion/runPriceHistoryIngestion.ts
+?? src/ingestion/scheduler.ts
+?? src/ingestion/schedulers/
+?? src/ingestion/utils/context.ts
+?? src/ingestion/utils/liveOverride.ts
+?? src/ingestion/utils/wrap.ts
+?? src/ingestion/utils/wrap.ts.bak.1766405041
+?? src/ingestion/utils/wrap.ts.bak.1766405081
+?? src/ingestion/utils/wrap.ts.bak.1766405114
+?? src/lib/
+?? src/middleware/responseHelpers.ts
+?? src/modules/
+?? src/observability/
+?? src/routes/adminRoutes.ts
+?? src/routes/brainAutopilotRoutes.ts
+?? src/routes/brainEnsembleRoutes.ts
+?? src/routes/brainMetaRoutes.ts
+?? src/routes/brainPortfolioRun.ts
+?? src/routes/brainRunsRoutes.ts
+?? src/routes/diagnosticsAggregate.ts
+?? src/routes/diagnosticsNarrativeCache.ts
+?? src/routes/diagnosticsOpportunityScoresRoutes.ts
+?? src/routes/ingestion/
+?? src/routes/ingestionRegistryRoutes.ts
+?? src/routes/ingestionRuns.ts
+?? src/routes/ingestionStatus.ts
+?? src/routes/intelligenceLatestRoutes.ts
+?? src/routes/opportunities.ts
+?? src/routes/opportunitiesRead.ts
+?? src/routes/portfolioRoutes.ts
+?? src/routes/ui/
+?? src/schedulers/
+?? src/schema/
+?? src/services/
+?? src/types/
+?? src/utils/persistDryRun.ts
+?? src/utils/persistenceGuard.ts

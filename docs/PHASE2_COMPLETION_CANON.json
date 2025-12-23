@@ -1,0 +1,12 @@
+{
+  "system": "MarketAI V5",
+  "phase": 2,
+  "name": "Ingestion + Engine Readiness",
+  "status": "COMPLETE",
+  "verified": true,
+  "constraints": {
+    "ingestion_changes_allowed": false,
+    "schema_changes_allowed": false,
+    "engine_rebuilds_allowed": false
+  }
+}

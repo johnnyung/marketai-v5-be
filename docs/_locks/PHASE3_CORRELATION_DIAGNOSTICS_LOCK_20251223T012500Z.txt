@@ -1,0 +1,11 @@
+PHASE 3 — CORRELATION DIAGNOSTICS LOCK
+
+Timestamp (UTC): 20251223T012500Z
+
+- correlationHunter.v2 enabled in diagnostics-only mode
+- correlation signal persisted to intelligenceBundle.signals
+- OpportunityScoringV1 explicitly strips correlation signals
+- Zero scoring or promotion influence guaranteed
+
+Status:
+LOCKED — Phase 3 diagnostics active, scoring guarded.

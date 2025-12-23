@@ -1,0 +1,27 @@
+# Canonical intentional placeholders
+# One path per line — exact match or directory prefix
+
+ingestion/pipelines/modulePipeline.ts
+ingestion/utils/ingestionLogger.ts
+ingestion/modules/cryptoExchangeNetflow.ts
+ingestion/modules/government/fmpGovernmentContracts.adapter.ts
+ingestion/modules/analysis/engineSignals.ts
+ingestion/modules/treasury-auction-snapshot.ts
+ingestion/modules/sec-press-releases.ts
+ai/modelRouter.ts
+brain/meta/metaEvaluator.ts
+brain/engines/metaFusion/v1/metaFusionAI.ts
+brain/engines/regimeSynthesis/v1/regimeSynthesisAI.ts
+brain/engines/autoUpgradePlanner/v1/autoUpgradePlannerEngine.ts
+brain/engines/experimentRunner/v1/experimentRunnerEngine.ts
+modules/political/fmpPoliticalTrades.ts
+controllers/diagnosticsSystemController.ts
+routes/diagnosticsRoutes.ts
+routes/ingestionRoutes.ts
+ingestion/registry.ts
+ingestion/modules/analysis/aiSynthesis.ts
+ingestion/modules/analysis/riskContext.ts
+ingestion/modules/analysis/correlationHunter.ts
+ingestion/modules/analysis/catalystHunter.ts
+ingestion/modules/lifecycle/opportunityLifecycle.ts
+brain/engines/portfolioEngine.ts

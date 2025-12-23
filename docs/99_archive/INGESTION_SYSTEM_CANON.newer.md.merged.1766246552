@@ -1,0 +1,31 @@
+
+---
+
+## 🔒 Incident: Registry & Pipeline Desynchronization (Dec 2025)
+
+### Root Cause
+- Execution registry and metadata registry diverged
+- Pipeline alternated between both
+- Dist output lacked expected module files
+- Context injection was inconsistent
+
+### Symptoms
+- Only 2–3 ingestion modules executed
+- `mod.run is not a function`
+- `Cannot read properties of undefined (reading 'ticker')`
+- Green build ≠ working runtime
+
+### Canonical Resolution (LOCKED)
+- One execution registry
+- Static imports only
+- Registry entries = `{ name, category, run }`
+- Pipeline owns context construction
+- UI registry is metadata-only
+
+### Guardrails
+- ENABLED module without `run(ctx)` = hard error
+- Missing context = pipeline bug
+- This document is the source of truth
+
+---
+

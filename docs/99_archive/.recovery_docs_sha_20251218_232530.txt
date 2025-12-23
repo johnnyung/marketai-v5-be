@@ -1,0 +1,5 @@
+# Canonical backend/docs sha snapshot
+# 
+96828b7bb53855a84fd22352d2eb6d0f2f1fe60cf75e0cfb9af0b6d176026772  /Users/animationtech/Desktop/marketai-v5/backend/docs/FAILURE_MODES_AND_GUARDS.md
+6b6eb483bd765bf3350a05cc056edb55b2721ed4a967b988904d95ea5d145997  /Users/animationtech/Desktop/marketai-v5/backend/docs/BUILD_AND_RELEASE_RULES.md
+e5102637ca3428ee8c114d687c8739f110e6987e8ca44e2f3afae5202f46b9d0  /Users/animationtech/Desktop/marketai-v5/backend/docs/INTEGRATION_LOCK_RULES.md

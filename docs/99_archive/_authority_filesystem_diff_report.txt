@@ -1,0 +1,462 @@
+
+===== FILE: DOC_AUTHORITY_MAP.md =====
+# MARKETAI V5 — DOCUMENT AUTHORITY MAP
+
+Tier-1 (CANONICAL — overrides everything)
+- AI_BOOTSTRAP.md
+- MARKETAI_V5_CANONICAL_STATE.md
+- PHASE_STATUS.md
+- INGESTION_STATUS_CANON.md
+- INGESTION_REGISTRY_RUNTIME_SEMANTICS.md
+- NEXT_EXECUTION_PLAN.md
+
+Tier-2 (SUPPORTING — informational)
+- ARCHITECTURE_OVERVIEW.md
+- BRAIN_AND_ENGINES.md
+- DATA_SOURCES_AND_INGESTION.md
+- FRONTEND_BACKEND_CONTRACT.md
+
+Tier-3 (HISTORICAL / CONTEXT)
+- *_HANDOFF.md
+- *_RECOVERY.md
+- Logs, snapshots, archives
+
+Conflict rule:
+If Tier-1 conflicts with anything → Tier-1 WINS.
+
+Generated: Wed 17 Dec 2025 17:51:28 UTC
+
+===== FILE: DOCUMENTATION_SYSTEM_CANON.md =====
+# DOCUMENTATION_SYSTEM_CANON.md
+Version: v1.0  
+Status: ACTIVE – SYSTEM AUTHORITY  
+Scope: Global (Frontend  Backend  AI)
+
+---
+
+## 1. Purpose
+
+This document defines the **MarketAI V5 Documentation System**.
+
+Documentation is treated as an **execution system**, not reference material.
+All engineering and AI actions must conform to this system.
+
+If code behavior conflicts with documented authority, **the code is wrong**.
+
+---
+
+## 2. Documentation Is a System
+
+Documentation in MarketAI V5 is:
+- Hierarchical
+- Layered
+- Authority-driven
+
+There is **no peer-level documentation**.
+Authority flows **top → down only**.
+
+Sideways interpretation is forbidden.
+
+---
+
+## 3. Canonical Documentation Layers
+
+### 3.1 Layer 1 — Canonical Bootstrap (Chat Entry)
+
+**Audience:** New AI chat sessions  
+**Mutation Policy:** Extremely restricted  
+**Purpose:** Orientation  routing only
+
+These documents are **always uploaded first** to new chats:
+
+- AI_CONTEXT.md
+- PHASE_STATUS.md
+- MARKETAI_V5_CANONICAL_STATE.md
+- ENGINE_TAXONOMY_AND_LIFECYCLE.md
+- FRONTEND_BACKEND_CONTRACT.md
+- AI_INGESTION_BOOTSTRAP.md
+
+Rules:
+- No implementation details
+- No fixes
+- No examples
+- Only pointers to authoritative docs
+
+These files **never contain lessons learned**.
+
+---
+
+### 3.2 Layer 2 — System Authority Docs
+
+**Audience:** Active engineering & AI execution  
+**Mutation Policy:** Append-only unless refactor explicitly approved
+
+Examples:
+- FILESYSTEM_CANON.md
+- BUILD_AND_RELEASE_RULES.md
+- FAILURE_MODES_AND_GUARDS.md
+- INTEGRATION_LOCK_RULES.md
+- INGESTION_CANON.md
+- FRONTEND_ARCHITECTURE_OVERVIEW.md
+- FRONTEND_BACKEND_CONTRACT.md
+
+Rules:
+- These define invariants
+- Code must conform to these
+- Lessons learned belong here
+
+This is where build-break prevention lives.
+
+---
+
+### 3.3 Layer 3 — Execution, Phase, and Audit Docs
+
+**Audience:** Historical reference  
+**Mutation Policy:** Immutable after closure
+
+Includes:
+- Phase runbooks
+- Diagnostics
+- Drift reports
+- Execution logs
+
+These documents **never override Layer 2**.
+
+---
+
+## 4. AI Navigation Rules
+
+Before modifying:
+- controllers
+- ingestion pipelines
+- frontend wiring
+- response semantics
+- build configuration
+
+AI **must** consult:
+- DOCUMENTATION_SYSTEM_CANON.md
+- FILESYSTEM_CANON.md
+- BUILD_AND_RELEASE_RULES.md
+- FRONTEND_BACKEND_CONTRACT.md
+
+If authority is unclear → **STOP AND ASK**.
+
+---
+
+## 5. Where Lessons Learned Go
+
+| Issue Type | Destination |
+|-----------|------------|
+| Frontend build failures | frontend/docs/* |
+| Backend build failures | backend/docs/* |
+| Cross-system failures | Layer-2 authority docs |
+| Historical traces | Layer-3 only |
+
+Lessons **never** go into bootstrap docs.
+
+---
+
+## 6. Change Classification
+
+- Local Fix → Code only
+- Systemic Fix → Layer-2 doc update REQUIRED
+- Contract Change → FRONTEND_BACKEND_CONTRACT.md
+- Canonical Violation → STOP, escalate, document first
+
+---
+
+## 7. Canonical Update Rules
+
+- Layer 1 updates: Pointer-only
+- Layer 2 updates: Required for systemic changes
+- New docs: Only if scope cannot fit existing authority
+- Duplication is forbidden
+
+---
+
+## 8. Explicitly Forbidden Patterns
+
+- Mechanical search/replace
+- Fixing builds without checking authority
+- Introducing parallel APIs
+- Changing response semantics ad-hoc
+- Green builds that violate contracts
+
+---
+
+## 9. Authority Map References
+
+See:
+- DOC_AUTHORITY_MAP.md
+- DOC_INDEX.md
+- AI_READ_ORDER.md
+- AI_DRIFT_BOUNDARIES.txt
+
+---
+
+## 10. Enforcement Invariant
+
+Documentation precedes code.  
+Code is disposable.  
+Contracts are not.
+
+Any fix that cannot be cleanly documented within this system is **invalid**.
+
+===== FILE: FILESYSTEM_INDEX.md =====
+# MARKETAI V5 — FILESYSTEM INDEX
+
+Authoritative folders:
+
+/backend/src/
+- All source code (TypeScript)
+
+/backend/dist/
+- Runtime execution output (authoritative for ingestion)
+
+/backend/docs/
+- System memory (AI  human)
+
+/backend/scripts/
+- Option-C automation only
+
+/frontend/
+- UI (LOCKED unless explicitly authorized)
+
+Rule:
+Before creating ANY file, AI MUST confirm it does not already exist.
+
+Generated: Wed 17 Dec 2025 17:51:28 UTC
+
+===== FILE: FILESYSTEM_CANON.md =====
+# FILESYSTEM_CANON — MARKETAI V5 (AUTHORITATIVE)
+
+This document defines the **canonical filesystem** for MarketAI V5.
+If a file exists, it is REAL — even if empty or a stub.
+
+Creating parallel, duplicate, or “cleaned up” files is forbidden.
+
+---
+
+## GLOBAL RULES
+
+- **DO NOT RECREATE** any listed file or directory
+- **STUB ≠ MISSING**
+- Empty files are intentional
+- Disabled modules are still canonical
+- Scripts represent historical and operational truth
+
+---
+
+## ROOT
+
+\`~/Desktop/marketai-v5/\`
+
+- \`backend/\` — **Authoritative system of record**
+- \`frontend/\` — UI  client integration
+- \`scripts/\` — legacy  cross-phase utilities
+- \`_ai_scans/\` — forensic / audit artifacts
+
+---
+
+## BACKEND (AUTHORITATIVE)
+
+\`backend/\`
+
+### Core
+- \`.env\`
+- \`.marketai_locked\`
+- \`PHASE_LOCK.txt\`
+
+### Docs
+\`backend/docs/\`
+- AI_BOOTSTRAP.md
+- AI_READ_ORDER.md
+- PHASE_4_*.md (all Phase 4 canon)
+- FILESYSTEM_CANON.md (this file)
+
+### Source
+\`backend/src/\`
+- phase3/ (locked, canonical)
+- phase4/
+  - diagnostics/
+  - qualification/
+  - explanation/
+  - models/
+- test-globals.d.ts (intentional, required)
+
+### Prisma
+\`backend/prisma/\`
+- schema.prisma
+- migrations/ (all historical migrations preserved)
+
+### Ingestion
+- Registries and adapters referenced by scripts
+- DISABLED and STUB ingestion modules are canonical
+- Absence of data ≠ failure
+
+### Scripts
+\`backend/scripts/\`
+- phase2_* (ingestion)
+- phase3_* (intelligence)
+- phase4_* (monitoring, qualification, explanation)
+- repair_*, reset_*, scan_*, register_* scripts
+- **DO NOT DELETE OR MERGE**
+
+### Archives
+\`backend/archives/\`
+- phase3_* (immutable snapshots)
+- phase4_* (immutable snapshots)
+
+---
+
+## FRONTEND (CANONICAL UI)
+
+\`frontend/\`
+
+### App Router
+\`frontend/src/app/\`
+- page.ts
+- layout.ts
+- diagnostics/
+- ingestion/
+- opportunities/
+- portfolio/
+- admin/
+
+### Components
+\`frontend/src/components/\`
+- Sidebar.tsx
+- widgets/
+- placeholders/
+
+### Hooks
+\`frontend/src/hooks/\`
+- useOpportunities.ts
+- useOpportunity.ts
+- usePortfolioLive.ts
+- useDiagnostics.ts
+- useIngestionStatus.ts
+- others (all canonical)
+
+### Lib
+\`frontend/src/lib/\`
+- api/ (client contracts)
+- utils.ts
+
+### Types
+\`frontend/src/types/\`
+- api.ts
+- opportunity.ts
+- portfolio.ts
+
+### Docs
+\`frontend/docs/\`
+- FRONTEND_ARCHITECTURE_OVERVIEW.md
+- UI_SURFACE_SPEC.md
+- ROUTING_AND_PAGES.md
+- WIDGET_CONTRACTS.md
+- INDEX.md
+
+### Scripts
+\`frontend/scripts/\`
+- LOCK_*.sh
+- diagnostics_*.sh
+- portfolio_*.sh
+- opportunity_*.sh
+(All are canonical. Many are one-time locks.)
+
+---
+
+## DO NOT RECREATE RULES (CRITICAL)
+
+- Never create “v2”, “new”, “clean”, or “refactor” copies
+- Never assume a missing feature means missing file
+- Always search filesystem canon before adding anything
+- When in doubt: **STOP AND ASK**
+
+---
+
+## STUB ≠ MISSING
+
+A stub means:
+- Reserved contract
+- Locked interface
+- Intentional no-op
+
+Do not replace without explicit authorization.
+
+---
+
+## FINAL NOTE
+
+This file is **system memory**.
+Violations cause irreversible drift.
+
+END.
+
+===== FILE: DOCS_AVAILABLE_INDEX.md =====
+# MarketAI V5 — Available Documentation Index
+
+This file exists to prevent AI from inventing, duplicating, or overwriting documentation.
+
+AI MUST consult this file before:
+- Creating new documentation
+- Renaming documentation
+- Deleting documentation
+
+---
+
+## Tier 1 — Canon (Authoritative)
+
+- AI_CONTEXT.md
+- MARKETAI_V5_CANONICAL_STATE.md
+- PHASE_STATUS.md
+- INGESTION_STATUS_CANON.md
+- NEXT_EXECUTION_PLAN.md
+- FRONTEND_BACKEND_CONTRACT.md
+
+---
+
+## Tier 2 — Reference (Read on demand)
+
+- ARCHITECTURE_OVERVIEW.md
+- BRAIN_AND_ENGINES.md
+- DATA_SOURCES_AND_INGESTION.md
+- INGESTION_SOURCES_CANON.md
+- ROUTE_MATRIX.md
+- FRONTEND_AND_UI_SPEC.md
+- FRONTEND_INTEGRATION_GUIDE.md
+- FRONTEND_INTEGRATION_RULES.md
+- ROADMAP_AND_APB_RULES.md
+- PROMPT_PLAYBOOK.md
+
+---
+
+## Tier 3 — History / Audit
+
+- _archive/ (past handoffs, failures, snapshots)
+
+AI MUST NOT create new docs that duplicate the purpose of existing files.
+- ENGINE_TAXONOMY_AND_LIFECYCLE.md — Engine canon & lifecycle
+- PHASE_7_ENGINE_ACTIVATION_PLAN.md — Engine activation roadmap
+- ENGINE_CORRELATION_HUNTER.md — Correlation Hunter engine
+
+DUPLICATE: - MARKETAI_V5_CANONICAL_STATE.md
+DUPLICATE: - AI_BOOTSTRAP.md
+DUPLICATE: - ARCHITECTURE_OVERVIEW.md
+DUPLICATE: - BRAIN_AND_ENGINES.md
+DUPLICATE: ### Scripts
+DUPLICATE: Rules:
+DUPLICATE: - AI_CONTEXT.md
+DUPLICATE: ---
+DUPLICATE: - BUILD_AND_RELEASE_RULES.md
+DUPLICATE: - NEXT_EXECUTION_PLAN.md
+DUPLICATE: - FILESYSTEM_CANON.md
+DUPLICATE: - PHASE_STATUS.md
+DUPLICATE: Generated: Wed 17 Dec 2025 17:51:28 UTC
+DUPLICATE: ### Docs
+DUPLICATE: - DATA_SOURCES_AND_INGESTION.md
+DUPLICATE: - INGESTION_STATUS_CANON.md
+DUPLICATE: - FRONTEND_ARCHITECTURE_OVERVIEW.md
+DUPLICATE: - AI_READ_ORDER.md
+DUPLICATE: - FRONTEND_BACKEND_CONTRACT.md

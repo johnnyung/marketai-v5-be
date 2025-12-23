@@ -1,0 +1,13 @@
+PHASE 3.007 — CORRELATION DIAGNOSTICS AGGREGATION
+
+Timestamp (UTC): 20251223T012716Z
+
+Changes:
+- Correlation runner now emits aggregate diagnostics
+- Counts processed bundles
+- Counts bundles with pre-existing signals
+- No scoring logic
+- No promotion logic
+
+Status:
+ACTIVE — Diagnostics aggregation only.

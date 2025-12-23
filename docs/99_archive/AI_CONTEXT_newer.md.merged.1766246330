@@ -1,0 +1,20 @@
+
+---
+
+## 🔁 Ingestion Failure Pattern (Dec 2025 — Canonical)
+
+**Observed failure mode**
+- Multiple ingestion registries diverged (`manifestFull.ts` vs `registry.ts`)
+- Dynamic imports + ESM path assumptions caused phantom modules
+- ENABLED modules without exported `run(ctx)`
+- Pipeline executed without guaranteed `ctx.prisma` / `ctx.logger`
+
+**Hard rules locked**
+- Single static ingestion registry for execution
+- No dynamic imports in ingestion pipeline
+- Every ENABLED module must export `run(ctx)`
+- Pipeline constructs full `IngestionContext`
+- >3 ingestion failures ⇒ AI Sweep-First Rule
+
+---
+

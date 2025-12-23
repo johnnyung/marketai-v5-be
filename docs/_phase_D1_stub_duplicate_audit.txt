@@ -1,0 +1,276 @@
+Phase D1 — Stub & Duplicate Audit
+Timestamp: Mon 22 Dec 2025 23:44:14 UTC
+
+=== DUPLICATE FILENAMES (basename collisions) ===
+aiSynthesis.ts
+catalystHunter.ts
+comparability.ts
+correlationArtifacts.ts
+correlationHunter.ts
+engineSignals.ts
+fmpDividendCalendar.ts
+fmpEarningsCalendar.ts
+fmpFundamentals.ts
+fmpGovernmentContracts.ts
+fmpInsider.ts
+fmpInstitutional.ts
+fmpKeyMetrics.ts
+fmpLobbyingDisclosures.ts
+fmpMacro.ts
+fmpNews.ts
+fmpPoliticalTrades.ts
+health.ts
+index.ts
+ingestionStatus.ts
+intelligenceBundles.ts
+operatorReadiness.ts
+opportunities.ts
+opportunityEngine.ts
+opportunityLifecycle.ts
+parityLogger.ts
+persistenceGuard.ts
+polygonCrypto.ts
+polygonOptionsFlow.ts
+polygonPrices.ts
+prisma.js
+prisma.ts
+riskContext.ts
+scheduler.ts
+sp500Universe.ts
+types.ts
+whatIf.ts
+
+=== SUSPECTED STUB FILES (name-based) ===
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/modules/sec13fHoldings.ts
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/modules/test-control-plane.ts
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/opportunityBacktest/v1/opportunityBacktestEngineV1.ts
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/opportunityBacktest/v1/index.ts
+/Users/animationtech/Desktop/marketai-v5/backend/src/routes/intelligenceLatestRoutes.ts
+
+=== NEAR-EMPTY FILES (<5 lines) ===
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/adapters/universe/sp500Universe.ts (       1 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/index.ts (       1 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/modules/political/index.ts (       2 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/modules/government/index.ts (       1 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/modules/analysis/catalystHunter/index.ts (       1 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/modules/analysis/riskContext/index.ts (       1 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/modules/analysis/correlationHunter/index.ts (       1 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/modules/analysis/aiSynthesis/index.ts (       1 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/modules/analysis/engineSignals/index.ts (       1 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/modules/lifecycle/opportunityLifecycle/index.ts (       1 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/types/index.ts (       1 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/config/index.ts (       1 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/diagnostics/index.ts (       1 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/lib/prisma.ts (       3 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/lib/prisma-js-bridge.d.ts (       3 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/api/index.ts (       0 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/fusion/index.ts (       1 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/ensemble/index.ts (       1 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/opportunities/materialization/index.ts (       1 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/opportunities/index.ts (       1 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/core/index.ts (       1 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/contracts/index.ts (       1 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/meta/index.ts (       1 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/utils/index.ts (       1 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/selfEvaluation/v1/index.ts (       1 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/catalystHunter/v1/index.ts (       1 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/catalystHunter/v2/index.ts (       1 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/aiCostGuardrails/v1/index.ts (       1 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/confidenceDecay/v1/index.ts (       1 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/metaLearningScheduler/v1/index.ts (       1 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/metaFusion/v1/index.ts (       1 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/metaFusion/v2/index.ts (       2 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/autoUpgradePrompter/v1/index.ts (       1 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/opportunityOutcome/v1/index.ts (       1 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/regimeFusion/v1/index.ts (       1 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/regimeSynthesis/v1/index.ts (       1 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/autoUpgradePlanner/v1/index.ts (       1 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/engineAttribution/v1/index.ts (       1 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/confidenceCalibration/v1/index.ts (       1 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/contradiction/v1/index.ts (       1 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/experimentRunner/v1/index.ts (       1 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/engineWeightAdjuster/v1/index.ts (       1 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/selfImprovementController/v1/index.ts (       1 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/opportunityBacktest/v1/index.ts (       1 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/index.ts (       1 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/aiGovernance/v1/index.ts (       1 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/opportunitySynthesis/v1/index.ts (       1 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/runners/runCorrelationEngine.ts (       4 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/runners/index.ts (       1 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/autopilot/bundleShadowGenerator.ts.d.ts (       1 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/controllers/index.ts (       1 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/cron/index.ts (       1 lines)
+/Users/animationtech/Desktop/marketai-v5/backend/src/schedulers/index.ts (       1 lines)
+
+=== EXPORT-ONLY FILES (export {}; or empty exports) ===
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/index.ts:1:export {};
+/Users/animationtech/Desktop/marketai-v5/backend/src/types/index.ts:1:export {};
+/Users/animationtech/Desktop/marketai-v5/backend/src/config/index.ts:1:export {};
+/Users/animationtech/Desktop/marketai-v5/backend/src/diagnostics/index.ts:1:export {};
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/fusion/index.ts:1:export {};
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/ensemble/index.ts:1:export {};
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/opportunities/materialization/index.ts:1:export {};
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/opportunities/index.ts:1:export {};
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/core/index.ts:1:export {};
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/contracts/index.ts:1:export {};
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/meta/index.ts:1:export {};
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/utils/index.ts:1:export {};
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/index.ts:1:export {};
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/runners/runCorrelationEngine.ts:4:export {};
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/runners/index.ts:1:export {};
+/Users/animationtech/Desktop/marketai-v5/backend/src/controllers/index.ts:1:export {};
+/Users/animationtech/Desktop/marketai-v5/backend/src/cron/index.ts:1:export {};
+
+=== CONFIG-LIKE FILES (review for duplication) ===
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/adapters/options/polygonOptionsFlow.ts
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/modules/options/polygonOptionsFlow.ts
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/modules/optionsFlow.ts
+/Users/animationtech/Desktop/marketai-v5/backend/src/config/index.ts
+/Users/animationtech/Desktop/marketai-v5/backend/src/config/env.ts
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/optionsEngine.ts
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/optionsFlow/v1/optionsFlowEngineV1.ts
+
+=== REGISTRY / MANIFEST DEFINITIONS ===
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/manifestFull.ts.bak.1766390328
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/manifestFull.ts.pre_restore.20251221_154035
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/manifestFull.ts.bak.1766389497
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/manifestFull.ts.bak.1766390788
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/manifestFull.ts.bak.1766390148
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/manifestFull.ts.bak.1766388053
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/manifestFull.ts.bak.1766390655
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/manifestFull.ts.bak.1766388659
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/manifestFull.ts.bak.1766388829
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/manifestFull.ts.DISABLED
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/manifestFull.ts.bak.1766387950
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/manifestFull.ts.bak.1766390741
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/manifestFull.ts.bak.1766388182
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/manifestFull.ts.bak.1766390294
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/registry.ts
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/manifestFull.ts.bak.1766390217
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/manifestFull.ts.bak.1766390829
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/manifestFull.ts.bak.1766390482
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/manifestFull.ts.bak.1766418413
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/manifestFull.ts.bak.1766390399
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/registry.ts.DISABLED
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/manifestFull.ts
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/core/engineRegistry.ts
+/Users/animationtech/Desktop/marketai-v5/backend/src/routes/ingestionRegistryRoutes.ts
+
+=== SHADOW / LEGACY CONTENT MARKERS ===
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/pipelines/runIngestionPipeline.ts.gated.20251220_185017:26:  const disabled = process.env.INGEST_DISABLE
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/pipelines/runIngestionPipeline.ts.gated.20251220_185017:43:    if (disabled.includes(mod.name)) {
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/adapters/metrics/fmpKeyMetrics.ts:4:export async function run_DISABLED_BY_CANON() {
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/adapters/options/polygonOptionsFlow.ts:6:export async function run_DISABLED_BY_CANON() {
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/adapters/fundamentals/fmpFundamentals.ts:4:export async function run_DISABLED_BY_CANON() {
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/adapters/crypto/polygonCrypto.ts:6:export async function run_DISABLED_BY_CANON() {
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/adapters/prices/polygonPrices.ts:4:export async function run_DISABLED_BY_CANON() {
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/adapters/opportunities/opportunityEngine.ts:6:export async function run_DISABLED_BY_CANON() {
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/adapters/polygonPrices.ts:6:export async function run_DISABLED_BY_CANON() {
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/adapters/fmpKeyMetrics.ts:6:export async function run_DISABLED_BY_CANON() {
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/adapters/fmpMacro.ts:6:export async function run_DISABLED_BY_CANON() {
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/adapters/insider/fmpInsider.ts:6:export async function run_DISABLED_BY_CANON() {
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/adapters/institutional/fmpInstitutional.ts:6:export async function run_DISABLED_BY_CANON() {
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/adapters/sp500Universe.ts:6:export async function run_DISABLED_BY_CANON() {
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/adapters/fmpInsider.ts:6:export async function run_DISABLED_BY_CANON() {
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/adapters/macro/fmpMacro.ts:6:export async function run_DISABLED_BY_CANON() {
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/adapters/news/fmpNews.ts:6:export async function run_DISABLED_BY_CANON() {
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/adapters/fmpNews.ts:6:export async function run_DISABLED_BY_CANON() {
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/adapters/fmpFundamentals.ts:6:export async function run_DISABLED_BY_CANON() {
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/adapters/fmpInstitutional.ts:6:export async function run_DISABLED_BY_CANON() {
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/adapters/bundles/intelligenceBundles.ts:6:export async function run_DISABLED_BY_CANON() {
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/registry.ts:8:export type IngestionStatus = "ENABLED" | "DISABLED" | "STUB";
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/modules/government/fmpGovernmentContracts.ts:10: * Scheduler remains DISABLED
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/modules/analysis/correlationArtifacts/correlationArtifacts.ts:4: * Phase 7.7 — Correlation Artifacts Engine (DISABLED)
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/modules/analysis/correlationHunter/correlationHunter.ts:2: * MARKETAI V5 — Correlation Hunter (DISABLED)
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/modules/analysis/engineSignals.ts:2: * Phase 6.5 — Engine Signals Ingestion Module (DISABLED)
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/modules/sec-press-releases.ts:4: * Status: disabled stub to unblock build
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/modules/bundles/intelligenceBundles.ts:251:// WRITE DISABLED: Legacy bundle writer superseded by BrainOrchestrator
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/modules/bundles/intelligenceBundles.ts:252:        result.errors.push("WRITE_DISABLED: use BrainOrchestrator intelligence bundles");
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/registry.ts.DISABLED:6:export type IngestionStatus = "ENABLED" | "DISABLED" | "STUB";
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/registry.ts.DISABLED:102:  /* ===== Phase 6 — Disabled Engine Scaffolding ===== */
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/registry.ts.DISABLED:108:    status: "DISABLED",
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/registry.ts.DISABLED:117:    status: "DISABLED",
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/registry.ts.DISABLED:126:    status: "DISABLED",
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/registry.ts.DISABLED:135:    status: "DISABLED",
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/registry.ts.DISABLED:144:    status: "DISABLED",
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/registry.ts.DISABLED:153:    status: "DISABLED",
+/Users/animationtech/Desktop/marketai-v5/backend/src/ingestion/registry.ts.DISABLED:162:    status: "DISABLED",
+/Users/animationtech/Desktop/marketai-v5/backend/src/ai/modelRouter.ts:4:export type AIMode = "live" | "shadow" | "disabled";
+/Users/animationtech/Desktop/marketai-v5/backend/src/ai/modelRouter.ts:15:  content: string;          // 👈 legacy alias
+/Users/animationtech/Desktop/marketai-v5/backend/src/ai/modelRouter.ts:27:  if (process.env.MARKETAI_AI_DISABLED === "true") return "disabled";
+/Users/animationtech/Desktop/marketai-v5/backend/src/ai/modelRouter.ts:28:  if (process.env.MARKETAI_ENGINE_SHADOW === "true") return "shadow";
+/Users/animationtech/Desktop/marketai-v5/backend/src/ai/modelRouter.ts:51:      : "[AI disabled or shadow mode]";
+/Users/animationtech/Desktop/marketai-v5/backend/src/ai/modelRouter.ts:64: * 🔒 LEGACY COMPATIBILITY SHIM
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/opportunities/materialization/runMaterializeOpportunityV1.ts:9:  const mode = String(process.env.MARKETAI_PERSISTENCE_MODE || "shadow");
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/opportunities/materialization/runMaterializeOpportunityV1.ts:41:    out.reasons["LIVE_WRITE_DISABLED"] = promos.length;
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/core/brainOrchestrator.ts:3:export type BrainRunMode = "full" | "ticker" | "shadow";
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/contracts/README.md:11:- Engines MAY be disabled forever
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/schema/types.ts:21:  // legacy/explicitly-known dotted ids used by engines
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/catalystHunter/v2/catalystHunterV2.ts:10:  // SHADOW-ONLY: do not detect real events yet
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/catalystHunter/v2/catalystHunterV2.ts:20:      reasonCodes: ["SHADOW_ONLY","NO_EVENT_DETECTION","BATCH2_CODES","BLOOMBERG_STYLE_TRANSPARENCY"],
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/catalystHunter/v2/catalystHunterEngineV2.ts:42: * - If AI disabled, returns deterministic output + prompt payload (human/runner can execute)
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/catalystHunter/v2/types.ts:11:  | "SOURCE_DISABLED"
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/metaFusion/v1/metaFusionEngine.ts:4:function isShadow(): boolean {
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/metaFusion/v1/metaFusionEngine.ts:5:  const v = (process.env.MARKETAI_ENGINE_SHADOW ?? "").toLowerCase();
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/metaFusion/v1/metaFusionEngine.ts:6:  return v === "true" || v === "1" || process.env.MARKETAI_PERSISTENCE_MODE === "shadow";
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/metaFusion/v1/metaFusionEngine.ts:18:    if (isShadow()) {
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/metaFusion/v1/metaFusionEngine.ts:26:          reason: "SHADOW_MODE_AI_DISABLED"
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/metaFusion/v2/metaFusionEngineV2.ts:10:  // SHADOW-ONLY: no meta-fusion yet
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/metaFusion/v2/metaFusionEngineV2.ts:18:      reasonCodes: ["SHADOW_ONLY", "NO_META_FUSION"],
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/metaFusion/v2/contradictionMap.ts:4:  // SHADOW-ONLY: declare structure, do not infer
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/metaFusion/v2/coherence.ts:4:  // SHADOW-ONLY: no computation
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/correlationHunter/v2/correlationHunterV2.ts:10:  // SHADOW-ONLY: do not compute correlations yet
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/correlationHunter/v2/correlationHunterV2.ts:19:      reasonCodes: ["SHADOW_ONLY","NO_CORRELATION_COMPUTATION","BATCH2_CODES","BLOOMBERG_STYLE_TRANSPARENCY"],
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/regimeFusion/v2/regimeFusionEngineV2.ts:10:  // SHADOW-ONLY: no regime synthesis yet
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/regimeFusion/v2/regimeFusionEngineV2.ts:18:      reasonCodes: ["SHADOW_ONLY", "NO_REGIME_FUSION"],
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/regimeSynthesis/v1/regimeSynthesisAI.ts:6: * Shadow mode must never import this file.
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/regimeSynthesis/v1/regimeSynthesisEngine.ts:4:function isShadow(): boolean {
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/regimeSynthesis/v1/regimeSynthesisEngine.ts:5:  const v = (process.env.MARKETAI_ENGINE_SHADOW ?? "").toLowerCase();
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/regimeSynthesis/v1/regimeSynthesisEngine.ts:6:  return v === "true" || v === "1" || process.env.MARKETAI_PERSISTENCE_MODE === "shadow";
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/regimeSynthesis/v1/regimeSynthesisEngine.ts:19:    if (isShadow()) {
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/regimeSynthesis/v1/regimeSynthesisEngine.ts:27:          reason: "SHADOW_MODE_AI_DISABLED"
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/regimeSynthesis/v2/regimeSynthesisEngineV2.ts:10:  // SHADOW-ONLY: no synthesis yet
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/regimeSynthesis/v2/regimeSynthesisEngineV2.ts:18:      reasonCodes: ["SHADOW_ONLY", "NO_REGIME_SYNTHESIS"],
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/explanationNarrative/v1/explanationNarrativeEngine.ts:8:  source: "ai" | "cached" | "disabled";
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/explanationNarrative/v1/explanationNarrativeEngine.ts:37:  // 2. Deterministic fallback (AI disabled)
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/explanationNarrative/v1/explanationNarrativeEngine.ts:40:      "Deterministic narrative (AI disabled):\n" +
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/explanationNarrative/v1/explanationNarrativeEngine.ts:51:      source: "disabled"
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/experimentRunner/v1/experimentRunnerEngine.ts:7: * SELF-DIRECTED EXPERIMENT RUNNER (SHADOW MODE)
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/experimentRunner/v1/experimentRunnerEngine.ts:40:      hypothesis: "Simulated shadow mutation",
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/experimentRunner/v1/experimentRunnerEngine.ts:51:        shadowMode: true,
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/opportunityPromotion/v1/opportunityPromotionGateV1.ts:98:  mode: "shadow" | "live";
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/opportunityPromotion/v1/opportunityPromotionGateV1.ts:106:    return { written: false, reason: "WRITE_GUARDED_OR_SHADOW" };
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/selfImprovementController/v1/selfImprovementControllerEngine.ts:72:          action: "CONTINUE_SHADOW_EXPERIMENTS",
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/signalDetection/v2/types.ts:20:  | "SOURCE_DISABLED"
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/signalDetection/v2/confidenceCalibration.ts:2: * CONFIDENCE CALIBRATION — SHADOW SAFE
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/signalDetection/v2/temporalBaseline.ts:2: * TEMPORAL BASELINE — SHADOW SAFE
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/signalDetection/v2/signalDetectionEngineV2.ts:18:  // Schema-agnostic baseline (shadow-safe)
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/signalDetection/v2/signalDetectionEngineV2.ts:26:    { name: "threshold_cross", passed: false, note: "no boundary crossed in shadow v2" }
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/signalDetection/v2/signalDetectionEngineV2.ts:34:  // SHADOW-ONLY: no behavior change; remain missing unless canon-approved logic added later
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/engines/signalDetection/v2/signalDetectionEngineV2.ts:62:      reasonCodes: ["SHADOW_ONLY", "NO_BEHAVIOR_CHANGE", "BLOOMBERG_STYLE_TRANSPARENCY"],
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/runners/runCorrelationEngine.ts:1:// LEGACY ENGINE DISABLED
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/runners/runCorrelationEngine.ts:2:// Correlation v1 is deprecated and replaced by correlationHunter v2 (shadow)
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/runners/runOpportunityPromotionV1.ts:24:  const mode = (process.env.MARKETAI_PERSISTENCE_MODE === "live" ? "live" : "shadow") as "shadow" | "live";
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/runners/runOpportunityScorePersistV1.ts:25:  const mode = process.env.MARKETAI_PERSISTENCE_MODE || "shadow";
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/runners/runOpportunityScorePersistV1.ts:67:    if (kill || mode === "shadow") {
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/runners/runOpportunityScorePersistV1.ts:69:      const key = kill ? "KILL_SWITCH" : "SHADOW_MODE";
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/runners/runPromotionGateV1.ts:26:  const mode = String(process.env.MARKETAI_PERSISTENCE_MODE || "shadow");
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/runners/runPromotionGateV1.ts:96:      out.reasons["LIVE_WRITE_DISABLED"] = (out.reasons["LIVE_WRITE_DISABLED"] || 0) + 1;
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/autopilot/bundleShadowGenerator.ts:6:export async function bundleShadowGenerator() {
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/autopilot/bundleShadowGenerator.ts:51:  console.log("[bundleShadowGenerator] completed");
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/autopilot/bundleShadowGenerator.ts:54:export default bundleShadowGenerator;
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/autopilot/shadowPortfolioRun.ts:13:      scope: "shadow",
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/autopilot/shadowPortfolioRun.ts:14:      summary: "Shadow portfolio run executed (read-only).",
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/autopilot/shadowPortfolioRun.ts:17:      sources: ["shadow"]
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/autopilot/opportunityMaterializer.ts:15:function persistenceMode(): "shadow" | "live" {
+/Users/animationtech/Desktop/marketai-v5/backend/src/brain/autopilot/opportunityMaterializer.ts:16:  return (process.env.MARKETAI_PERSISTENCE_MODE === "live") ? "live" : "shadow";
+/Users/animationtech/Desktop/marketai-v5/backend/src/modules/political/fmpPoliticalTrades.ts:7:  // TODO: Replace with FMP Stable endpoint fetch
+/Users/animationtech/Desktop/marketai-v5/backend/src/routes/brainEnsembleRoutes.ts:1:// LEGACY BRAIN ENSEMBLE — DORMANT
+/Users/animationtech/Desktop/marketai-v5/backend/src/routes/brainEnsembleRoutes.ts:3:// This file is intentionally disabled.
+/Users/animationtech/Desktop/marketai-v5/backend/src/routes/brainAutopilotRoutes.ts:10:    note: "Autopilot intentionally disabled during Phase 1 system completion."
+/Users/animationtech/Desktop/marketai-v5/backend/src/routes/diagnosticsAggregate.ts:23:      mode: "DISABLED",
+/Users/animationtech/Desktop/marketai-v5/backend/src/routes/diagnosticsRoutes.ts:50:        status: "disabled",
+/Users/animationtech/Desktop/marketai-v5/backend/src/routes/ingestionRoutes.ts:20:        notes: "Primary price source (FMP Stable). Execution disabled.",
+/Users/animationtech/Desktop/marketai-v5/backend/src/routes/ingestionRoutes.ts:25:        status: "disabled",
+/Users/animationtech/Desktop/marketai-v5/backend/src/routes/ingestionRoutes.ts:34:        status: "disabled",
+

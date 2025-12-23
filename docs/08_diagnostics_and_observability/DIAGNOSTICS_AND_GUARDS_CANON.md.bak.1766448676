@@ -1,0 +1,85 @@
+# DIAGNOSTICS & GUARDS — CANONICAL
+Failure modes, guardrails, observability rules.
+
+---
+
+## Diagnostics & Guardrails Authority
+
+This document (**DIAGNOSTICS_AND_GUARDS_CANON.md**) is the **sole authoritative source** for:
+
+- Failure classification
+- Guardrail philosophy
+- Observability expectations
+- Risk handling principles
+
+Rules:
+- All diagnostics behavior derives from this document
+- No other file may redefine guardrail rules
+- Canonical failure meaning is defined here
+
+Supporting, non-authoritative documents live in:
+`backend/docs/08_diagnostics_and_observability/_appendix/`
+
+
+---
+
+## Diagnostics & Guardrails Authority
+
+This document (**DIAGNOSTICS_AND_GUARDS_CANON.md**) is the **sole authoritative source** for:
+
+- Failure classification
+- Guardrail philosophy
+- Observability expectations
+- Risk handling principles
+
+Rules:
+- All diagnostics behavior derives from this document
+- No other file may redefine guardrail rules
+- Canonical failure meaning is defined here
+
+Supporting, non-authoritative documents live in:
+`backend/docs/08_diagnostics_and_observability/_appendix/`
+
+
+---
+
+## Canon Hygiene Notice — Duplicate Authority Block
+
+This document may contain a duplicated "Diagnostics & Guardrails Authority" section above.
+This duplication is **non-semantic**.
+
+Rules:
+- Treat the authority declaration as a single statement of truth
+- Duplicated text does not create multiple tiers or multiple authorities
+- If any inconsistency exists elsewhere, this canon still wins
+
+
+---
+
+## Ingestion Type Safety as Guardrail (Enforced)
+
+TypeScript build failures in ingestion modules are intentional safeguards.
+
+They prevent:
+- Ambiguous ingestion outcomes
+- Silent schema corruption
+- Invalid status propagation
+
+A module that fails to type-check:
+- MUST NOT reach runtime
+- MUST be corrected before ingestion resumes
+
+Type safety is a guardrail, not friction.
+
+
+---
+
+## Engine Safety & Guardrails
+
+- Expected analytical failures resolve to silence
+- Structural contract violations hard-stop that engine only
+- Synthetic or placeholder signals are forbidden
+- Kill-switch and shadow modes prevent mutation
+- Duplicate artifacts are suppressed deterministically
+- Promotion gates act as overconfidence guards
+

@@ -1,0 +1,105 @@
+# MARKETAI V5 — INGESTION STATUS (CANON)
+
+## ENABLED
+- sp500Universe (INTERNAL)
+- polygonPrices (POLYGON)
+- fmpFundamentals (FMP)
+- fmpKeyMetrics (FMP)
+- fmpInsider (FMP)
+- fmpInstitutional (FMP)
+- fmpMacro (FMP)
+- fmpNews (FMP)
+- fmpGovernmentContracts (FMP)
+
+## DISABLED (BY DESIGN)
+- polygonOptionsFlow
+- polygonCrypto
+- intelligenceBundles
+- opportunityEngine
+- fmpPoliticalTrades
+- fmpLobbyingDisclosures
+
+
+- fmpDividendCalendar — DISABLED (FMP, dividend calendar)
+
+---
+
+## 📅 Calendar Modules (Expected Behavior)
+
+Calendar-style ingestion modules include (but are not limited to):
+
+- fmpIPOCalendar
+- fmpDividendCalendar
+- fmpEconomicCalendar
+- fmpEarningsCalendar
+
+### Phase 2 Canonical Behavior
+
+- These modules rely on **time-window-dependent** upstream data.
+- FMP Stable endpoints may legitimately return **404** when no data is available.
+- **404 is NOT an error condition**.
+
+### Pipeline Semantics
+
+- If a calendar module encounters a 404:
+  - It logs a warning
+  - It returns `{ status: "SKIPPED" }`
+  - It does **NOT throw**
+- The ingestion pipeline marks the module as **SUCCESS** if no exception is thrown.
+
+### Source of Truth
+
+- **Logs** indicate actual data availability.
+- **Pipeline SUCCESS** indicates system health, not data presence.
+
+### Important Rule
+
+Do **NOT** modify pipeline logic in Phase 2 to interpret returned status values.
+
+Calendar semantics are finalized in Phase 3 intelligence layers, not ingestion.
+
+
+## Source Status Interpretation
+
+Source status reflects:
+- Structural correctness over completeness
+- Schema compatibility over throughput
+- Replay safety over speed
+
+A source marked active may still be partially guarded.
+
+---
+
+## Disable, Skip, and Zero-Write Semantics (Enforced)
+
+### Disabled (Skipped)
+A disabled ingestion module:
+- Is registered
+- Is never executed
+- Produces no side effects
+- Always emits a log entry:
+
+[INGESTION][SKIPPED] <module-name>
+
+Disabled modules do not error and do not initialize.
+
+---
+
+### Executed but Zero-Write (Valid State)
+A module may execute successfully and write zero rows when:
+- Upstream data is absent
+- Correlated datasets are missing
+- Date alignment yields no valid joins
+
+This is a valid partial outcome, not a failure.
+
+---
+
+### Key Invariants
+- Disabled ≠ removed
+- Skipped ≠ failed
+- Executed ≠ written
+- Zero rows ≠ error
+
+These distinctions are structural and enforced.
+
